@@ -36,3 +36,60 @@
     transform: rotate(360deg);
   }
 }
+
+/* logo size */
+.logo-size {
+  height: 135px;
+  width: 180px !important;
+}
+
+/* text alignment */
+.text-align-left { text-align: left; }
+.text-align-center { text-align: center; }
+.text-align-right { text-align: right; }
+
+/* Width */
+.w-25per { width: 25%; }
+.w-50per { width: 50%; }
+.w-75per { width: 75%; }
+.w-100per { width: 100%; }
+.w-84 { width: 84px !important; }
+
+/* height */
+.h-50 { height: '50px'; }
+
+/* margin */
+.m-a-0px { margin: 0px !important; }
+.m-a-20px { margin: 20px; }
+.m-l-25px { margin-left: 25px; }
+.m-l-256px { margin-left: 256px; }
+.m-l-64px { margin-left: 64px; }
+
+/* Padding */
+.p-a-10 { padding: 10px; }
+
+/* border */
+.b-a-1px { border: 1px solid grey; }
+.b-l-1px { border-left: 1px solid lightgray; }
+
+/* Color */
+.color-white { color: white !important; }
+.color-gray { color: gray !important; }
+
+.display-flex { display:  flex; }
+.justify-content-center { justify-content: center; }
+.justify-content-between { justify-content: space-between; }
+.align-item-center { align-items: center; }
+
+
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #282c34;
+}
+
+.cursor { cursor: pointer; }
+
