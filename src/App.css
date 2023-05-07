@@ -93,3 +93,18 @@
 
 .cursor { cursor: pointer; }
 
+
+.vertical-animation{
+  animation: grow 1s ease-out forwards;
+  transform-origin: bottom;
+}
+@keyframes grow{
+  from{
+    transform: scaleY(0);
+  }
+}
+
+.border-none{ border: none; }
+  
+
+

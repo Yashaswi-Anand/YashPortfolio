@@ -1,37 +1,53 @@
-import { CCard, CTable, CTableBody, CTableDataCell, CTableHead, CTableHeaderCell, CTableRow } from '@coreui/react'
+import { CCard } from '@coreui/react'
 import React from 'react'
+import DataTable from 'react-data-table-component';
+import customTableStyles from '../constants';
 
 function Education() {
-  const data = [{ id: 1, name: "yash", email: 'email@com', phone: '123456', address: 'address' },
-  { id: 2, name: "yash", email: 'email@com', phone: '123456', address: 'address' },
-  { id: 3, name: "yash", email: 'email@com', phone: '123456', address: 'address' }]
+  const columns = [
+    {
+      name: 'Session',
+      selector: row => row.year ? row.year : '-',
+      sortable: true,
+    },
+    {
+      name: 'Course',
+      selector: row => row.course ? row.course : '-',
+      sortable: true,
+    },
+    {
+      name: 'Branch',
+      selector: row => row.branch ? row.branch : '-',
+      sortable: true,
+    },
+    {
+      name: 'College/School',
+      width: '18rem',
+      selector: row => row.school ? row.school : '-',
+      sortable: true,
+    },
+    {
+      name: 'CGPA/Percentage',
+      selector: row => row.marks ? row.marks : '-',
+      sortable: true,
+    },
+  ];
+  const data = [{ year: '2018-2022', course: "BTech", branch:'CSE', school: 'Motihari College Of Engineering, Motihari', marks: '8.7', address: 'address' },
+  { year: '2015-2017', course: "12th", branch:'Science', school: 'Maharaja College, Ara', marks: '70.2%', address: 'address' },
+  { year: '2014-2015', course: "10th", branch:'General', school: 'Gyan Bharti Education Complex, Patna', marks: '9.4', address: 'address' }]
   return (
-    <div>
-      <CCard className='m-a-20px b-a-1px'>
-        <CTable
-          align="middle"
-          small
-          hover
-          className='m-a-0px'>
-          <CTableHead>
-            <CTableRow>
-              <CTableHeaderCell className='text-align-left' scope="col">ID</CTableHeaderCell>
-              <CTableHeaderCell className='b-l-1px text-align-left' scope="col">NAME</CTableHeaderCell>
-              <CTableHeaderCell className='b-l-1px text-align-left' scope="col">EMAIL</CTableHeaderCell>
-              <CTableHeaderCell className='b-l-1px text-align-left' scope="col">PHONE</CTableHeaderCell>
-              <CTableHeaderCell className='b-l-1px text-align-left' scope="col">ADDRESS</CTableHeaderCell>
-            </CTableRow>
-          </CTableHead>
-          <CTableBody>
-            {data && data.map((item, idx) => <CTableRow key={idx}>
-              <CTableHeaderCell className='text-align-left' scope="row">{idx + 1}.</CTableHeaderCell>
-              <CTableDataCell className='b-l-1px text-align-left'>{item.name}</CTableDataCell>
-              <CTableDataCell className='b-l-1px text-align-left'>{item.email}</CTableDataCell>
-              <CTableDataCell className='b-l-1px text-align-left'>{item.phone}</CTableDataCell>
-              <CTableDataCell className='b-l-1px text-align-left'>{item.address}</CTableDataCell>
-            </CTableRow>)}
-          </CTableBody>
-        </CTable>
+    <div style={{margin: '10px'}}>
+      <CCard>
+        <DataTable
+            pagination
+            paginationRowsPerPageOptions={[1, 3, 5]}
+            highlightOnHover
+            dense
+            theme="solarized"
+            columns={columns}
+            data={data}
+            customStyles={customTableStyles}
+        />
       </CCard>
     </div>
   )
