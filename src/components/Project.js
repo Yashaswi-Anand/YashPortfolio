@@ -2,7 +2,7 @@ import React from 'react'
 
 function Project() {
   return (
-    <div>Project</div>
+    <div style={{backgroundImage:'radial-gradient(#FFFBF5, #C3ACD0)', height:'100vh'}}>Project</div>
   )
 }
 

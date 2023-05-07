@@ -27,11 +27,12 @@ function Skills() {
 
 
   return (
-    <div>
+    <div style={{backgroundImage:'radial-gradient(aliceblue, lightgray)', height:'87.6vh'}}>
       <CContainer style={{ padding: '0px' }}>
         {/* First Part */}
-        <div style={{ display: 'flex', height: '200px', justifyContent: 'space-between', padding: '0px', marginTop:'20px' }}>
-          <div style={{ width: '60%' }}>
+        <div style={{ display: 'flex', height: '200px', justifyContent: 'space-between', padding: '0px' }}>
+          <div style={{ width: '60%'}}>
+            <div style={{marginTop:'10px'}}>
             <h4 style={{ textAlign: 'left', marginLeft: '10px' }}>Language</h4>
             <CTable style={{ margin: '10px' }}>
               <CTableBody>
@@ -49,10 +50,11 @@ function Skills() {
                 </CTableRow>
               </CTableBody>
             </CTable>
+            </div>
           </div>
 
           <div style={{ borderLeft: '1px solid blue', width: '40%' }}>
-            <h4 style={{ textAlign: 'left', marginLeft: '10px' }}>Data Bases</h4>
+            <h4 style={{ textAlign: 'left', marginLeft: '10px', marginTop:'10px' }}>Data Bases</h4>
             <div style={{ display: 'flex', marginLeft:'2%' }}>
               <div>
                 <VerticaleProgressBar bgcolor={css.backgroundColor} completed={css.score} />

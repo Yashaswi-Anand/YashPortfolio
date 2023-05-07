@@ -36,19 +36,21 @@ function Education() {
   { year: '2015-2017', course: "12th", branch:'Science', school: 'Maharaja College, Ara', marks: '70.2%', address: 'address' },
   { year: '2014-2015', course: "10th", branch:'General', school: 'Gyan Bharti Education Complex, Patna', marks: '9.4', address: 'address' }]
   return (
-    <div style={{margin: '10px'}}>
-      <CCard>
-        <DataTable
-            pagination
-            paginationRowsPerPageOptions={[1, 3, 5]}
-            highlightOnHover
-            dense
-            theme="solarized"
-            columns={columns}
-            data={data}
-            customStyles={customTableStyles}
-        />
-      </CCard>
+    <div style={{backgroundImage:'radial-gradient(#FFFBF5, #C3ACD0)', height:'100vh'}}>
+      <div>
+        <CCard>
+          <DataTable
+              pagination
+              paginationRowsPerPageOptions={[1, 3, 5]}
+              highlightOnHover
+              dense
+              theme="solarized"
+              columns={columns}
+              data={data}
+              customStyles={customTableStyles}
+          />
+        </CCard>
+      </div>
     </div>
   )
 }

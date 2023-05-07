@@ -2,7 +2,7 @@ import React from 'react'
 
 function Internship() {
   return (
-    <div>Internship</div>
+    <div style={{backgroundImage:'radial-gradient(#FFFBF5, #C3ACD0)', height:'100vh'}}>Internship</div>
   )
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 function Experience() {
   return (
-    <div>Experience</div>
+<div style={{backgroundImage:'radial-gradient(#FFFBF5, #C3ACD0)', height:'87.5vh'}}>Experience</div>
   )
 }
 
