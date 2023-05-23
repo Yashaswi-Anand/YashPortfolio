@@ -2,54 +2,66 @@ import { CCard } from '@coreui/react'
 import React from 'react'
 import DataTable from 'react-data-table-component';
 import customTableStyles from '../constants';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 
 function Education() {
-  const columns = [
-    {
-      name: 'Session',
-      selector: row => row.year ? row.year : '-',
-      sortable: true,
-    },
-    {
-      name: 'Course',
-      selector: row => row.course ? row.course : '-',
-      sortable: true,
-    },
-    {
-      name: 'Branch',
-      selector: row => row.branch ? row.branch : '-',
-      sortable: true,
-    },
-    {
-      name: 'College/School',
-      width: '18rem',
-      selector: row => row.school ? row.school : '-',
-      sortable: true,
-    },
-    {
-      name: 'CGPA/Percentage',
-      selector: row => row.marks ? row.marks : '-',
-      sortable: true,
-    },
-  ];
-  const data = [{ year: '2018-2022', course: "BTech", branch:'CSE', school: 'Motihari College Of Engineering, Motihari', marks: '8.7', address: 'address' },
-  { year: '2015-2017', course: "12th", branch:'Science', school: 'Maharaja College, Ara', marks: '70.2%', address: 'address' },
-  { year: '2014-2015', course: "10th", branch:'General', school: 'Gyan Bharti Education Complex, Patna', marks: '9.4', address: 'address' }]
   return (
-    <div style={{backgroundImage:'radial-gradient(#FFFBF5, #C3ACD0)', height:'100vh'}}>
+    <div style={{ backgroundImage: 'radial-gradient(#FFFBF5, #C3ACD0)', }}>
       <div>
-        <CCard>
-          <DataTable
-              pagination
-              paginationRowsPerPageOptions={[1, 3, 5]}
-              highlightOnHover
-              dense
-              theme="solarized"
-              columns={columns}
-              data={data}
-              customStyles={customTableStyles}
-          />
-        </CCard>
+
+        <VerticalTimeline
+          layout={'1-column-left'}
+        >
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: 'radial-gradient(#C3ACD0, #C3ACD0)', color: '#fff' }}
+            contentArrowStyle={{ borderRight: '7px solid #C3ACD0' }}
+            date="2018 - 2022"
+            iconStyle={{ background: 'radial-gradient(#C3ACD0, #C3ACD0)', color: '#fff' }}
+          // icon={}
+          >
+            <div style={{ textAlign: 'start' }}>
+              <h3 className="vertical-timeline-element-title">BTech</h3>
+              <h4 className="vertical-timeline-element-subtitle">Motihari College Of Engineering, Motihari</h4>
+              <p>Computer Science And Engineering</p>
+              <p>CGPA: 8.7</p>
+            </div>
+          </VerticalTimelineElement>
+
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: 'radial-gradient(#C3ACD0, #C3ACD0)', color: '#fff' }}
+            contentArrowStyle={{ borderRight: '7px solid #C3ACD0' }}
+            date="2018 - 2022"
+            iconStyle={{ background: 'radial-gradient(#C3ACD0, #C3ACD0)', color: '#fff' }}
+          // icon={}
+          >
+            <div style={{ textAlign: 'start' }}>
+              <h3 className="vertical-timeline-element-title">12th</h3>
+              <h4 className="vertical-timeline-element-subtitle">Maharaja College, Ara</h4>
+              <p>Science</p>
+              <p>Percentage: 70.2 %</p>
+            </div>
+          </VerticalTimelineElement>
+
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: 'radial-gradient(#C3ACD0, #C3ACD0)', color: '#fff' }}
+            contentArrowStyle={{ borderRight: '7px solid #C3ACD0' }}
+            date="2018 - 2022"
+            iconStyle={{ background: 'radial-gradient(#C3ACD0, #C3ACD0)', color: '#fff' }}
+          // icon={}
+          >
+            <div style={{ textAlign: 'start' }}>
+              <h3 className="vertical-timeline-element-title">10th</h3>
+              <h4 className="vertical-timeline-element-subtitle">Gyan Bharti Education Complex, Patna</h4>
+              <p>General</p>
+              <p>CGPA: 9.4</p>
+            </div>
+          </VerticalTimelineElement>
+
+        </VerticalTimeline>
       </div>
     </div>
   )

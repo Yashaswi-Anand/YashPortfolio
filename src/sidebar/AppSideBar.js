@@ -38,12 +38,12 @@ function AppSideBar() {
             <AppSidebarNav items={navbar} />
           </SimpleBar>
 
-          <SimpleBar>
+          {/* <SimpleBar>
             <div className='cursor m-l-25px text-align-left p-a-10 h-50' onClick={() => setLogoutModel(!logoutModel)}>
               <span><CIcon icon={cilAccountLogout} customClassName="nav-icon" /></span>
               {!unfoldable && <span style={{ color: '#b5adad' }}> &emsp; Logout</span>}
             </div >
-          </SimpleBar>
+          </SimpleBar> */}
         </CSidebarNav>
 
         <CSidebarToggler

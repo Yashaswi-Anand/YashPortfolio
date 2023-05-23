@@ -105,6 +105,26 @@
 }
 
 .border-none{ border: none; }
-  
 
+.progress-bars {
+  display: flex;
+}
 
+.progress-bar {
+  width: 50px;
+  height: 150px;
+  margin-right: 10px;
+  position: relative;
+  background-color: #ccc;
+}
+
+.fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #007bff;
+  transition: height 0.5s ease-in-out;
+}
+
+#top { background-color: radial-gradient(#FFFBF5, #C3ACD0);}
