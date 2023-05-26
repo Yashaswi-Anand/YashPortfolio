@@ -12,7 +12,7 @@ const VerticalProgressBar = ({ percentage, color }) => {
 
   return (
     <div className="progress-bar">
-      <div className="fill" style={{ height: `${width}%` , color:{backgroundColor}}}></div>
+      <div className="fill" style={{ height: `${width}%` , color:{backgroundColor}}}><p style={{color:'white'}}>{percentage}%</p></div>
     </div>
   );
 };
