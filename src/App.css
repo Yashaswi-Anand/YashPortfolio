@@ -79,8 +79,10 @@
 .display-flex { display:  flex; }
 .justify-content-center { justify-content: center; }
 .justify-content-between { justify-content: space-between; }
+.justify-content-around { justify-content: space-around; }
+.justify-content-evenly { justify-content: space-evenly; }
 .align-item-center { align-items: center; }
-
+.flex-direction { flex-direction: column; }
 
 .parent-container {
   display: flex;
@@ -130,6 +132,15 @@
 }
 
 #top { background-color: radial-gradient(#FFFBF5, #C3ACD0);}
+
+.profile-Container {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+/* card view */
 
 *{
   margin: 0;
@@ -251,4 +262,21 @@ h1{
       flex: 0 0 100%;
       max-width:100%;
   }
+  .profile-Container {
+    flex-direction: column;
+    padding: 0px;
+  }
+}
+
+/* Change Multiple border in about profile image */
+.animated-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animated-image {
+  width: 200px;
+  height: 200px;
+  transition: border-radius 0.5s ease-in-out;
 }

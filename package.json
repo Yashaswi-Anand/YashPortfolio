@@ -18,6 +18,7 @@
     "react-scripts": "5.0.1",
     "react-spring": "^9.7.1",
     "react-vertical-timeline-component": "^3.6.0",
+    "react-wavify": "^1.8.2",
     "redux": "^4.2.1",
     "simplebar": "^6.2.5",
     "simplebar-react": "^3.2.4",
