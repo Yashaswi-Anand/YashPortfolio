@@ -25,7 +25,6 @@ const NavBar = () => {
             <div className="navbar-container">
                 <ul className={isFixed ? 'navbar-items sticky_menu' : 'navbar-items'}>
                     <li><a href="#home"><FontAwesomeIcon icon={faHome} /> <span className="nav-text">Home</span></a></li>
-                    <li><a href="#about"><FontAwesomeIcon icon={faUser} /> <span className="nav-text">About</span></a></li>
                     <li><a href="#skills"><FontAwesomeIcon icon={faCogs} /> <span className="nav-text">Skills</span></a></li>
                     <li><a href="#experience"><FontAwesomeIcon icon={faBriefcase} /> <span className="nav-text">Experience</span></a></li>
                     <li><a href="#education"><FontAwesomeIcon icon={faGraduationCap} /> <span className="nav-text">Education</span></a></li>

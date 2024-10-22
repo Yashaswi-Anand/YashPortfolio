@@ -1,8 +1,22 @@
   /* App.css */
   html {
     scroll-behavior: smooth; /* Smooth scrolling effect */
+    background-color:#ddeeffb5 !important;
   }
 
+  /* Margin */
+  .m-t-5 { margin-top: 5px; }
+  .m-t-10 { margin-top: 10px; }
+  .m-t-15 { margin-top: 15px; }
+  .m-t-20 { margin-top: 20px; }
+  .m-t-25 { margin-top: 25px; }
+  .m-t-30 { margin-top: 30px; }
+  .m-t-35 { margin-top: 35px; }
+  .m-t-50 { margin-top: 50px; }
+  .m-t-100 { margin-top: 100px; }
+
+
+  /* Sections */
   .content {
     padding-top: 0px; /* To ensure content is not hidden under the fixed navbar */
   }
@@ -28,7 +42,7 @@
   }
 
   #about, #skills, #experience, #education, #portfolio, #achievements, #contact {
-    background-color: #fff;
+    /* background-color: #fff; */
   }
 
   /* --------------------------------- */
@@ -112,13 +126,46 @@
     justify-content: center;
   }
 
+  .flex-direction-column {
+    flex-direction: column;
+  }
+
+  .flex-direction-row {
+    flex-direction: row;
+  }
+
+  .flex-direction {
+    flex-direction: row;
+  }
+
   .align-center {
     align-items: center;
   }
 
   .w-50 {
-    width: 50%;
+    width: 50% !important;
   }
+
+  /* --------------------------------- */
+  /* Home */
+  .about-discription{
+    font-size: 1.2rem;
+    color: black;
+    font-style: italic;
+    text-align: justify;
+    line-height: 1.6;
+    padding: 10px;
+  }
+
+  .type-writer{
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-style: italic;
+    color: burlywood;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  /* End Home */
 
   /* General styles remain the same */
 
@@ -164,6 +211,10 @@
       width: 100%; /* Make it full width */
       padding: 10px 5px; /* Adjust padding for mobile */
       margin: 10px;
+  }
+
+  .flex-direction {
+      flex-direction: column;
   }
 }
 

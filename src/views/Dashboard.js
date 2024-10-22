@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar';
+import Home from './Home';
 
 function Dashboard() {
   return (
@@ -7,12 +8,7 @@ function Dashboard() {
       <NavBar />
       <div className="content">
         <section id="home">
-          <h2>Home</h2>
-          <p>Welcome to my portfolio!</p>
-        </section>
-        <section id="about">
-          <h2>About</h2>
-          <p>This section contains information about me.</p>
+          <Home/>
         </section>
         <section id="skills">
           <h2>Skills</h2>
