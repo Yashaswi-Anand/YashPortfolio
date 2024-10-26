@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faUser, faCogs, faBriefcase, faGraduationCap, faProjectDiagram, faTrophy, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faCogs, faBriefcase, faGraduationCap, faProjectDiagram, faTrophy, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
     const [isFixed, setIsFixed] = useState(false);

@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './NavBar';
 import Home from './Home';
+import Skills from './Skills';
 
 function Dashboard() {
   return (
@@ -11,8 +12,7 @@ function Dashboard() {
           <Home/>
         </section>
         <section id="skills">
-          <h2>Skills</h2>
-          <p>This section highlights my technical and soft skills.</p>
+          <Skills/>
         </section>
         <section id="experience">
           <h2>Experience</h2>
