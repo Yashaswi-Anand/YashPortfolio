@@ -153,6 +153,10 @@
     justify-content: center;
   }
 
+  .space-between {
+    justify-content: space-between;
+  }
+
   .flex-direction-column {
     flex-direction: column;
   }
@@ -175,6 +179,10 @@
 
   .w-30-100 {
     width: 30%;
+  }
+
+  .w-80{
+    width: 80%;
   }
 
   .w-70-100 {
@@ -208,10 +216,11 @@
   /* Skills Start */
 
  .skills-section {
-    width: 80%; /* Adjust this width as needed */
+    width: 90%; /* Adjust this width as needed */
     margin: auto;
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    /* background-color: red; */
  }
 
   .skills-section h2 {

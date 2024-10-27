@@ -19,8 +19,10 @@ function Home() {
 
             <div className='d-flex justify-center align-center w-100 m-t-50 flex-direction'>
                 <div className='d-flex justify-center align-center flex-direction-column w-30-100 '>
-                    <img src='https://marketplace.canva.com/EAFuJ5pCLLM/1/0/1600w/canva-black-and-gold-simple-business-man-linkedin-profile-picture-BM_NPo97JwE.jpg'
-                        height={200} width={200} style={{ 'borderRadius': '50%' }} />
+                    <img 
+                    src='https://marketplace.canva.com/EAFuJ5pCLLM/1/0/1600w/canva-black-and-gold-simple-business-man-linkedin-profile-picture-BM_NPo97JwE.jpg'
+                    // src= 'https://photos.google.com/share/AF1QipPTZBUQpouvqDksdhjb-3TsGVDjBCcSV0Nb3L7hfXdcjOu5Y_3gsz1eRlB17d3DpA/photo/AF1QipPbU09ele-ayR6Sfg6xNQBIPxqm6L2ZRrEobHOc?key=dGtWZmlvdkJKS2I2TzBjQ3lNM0ZBYkpBaE9sSHZn'
+                    height={200} width={200} style={{ 'borderRadius': '50%' }} />
                     <p className='type-writer w-100'>
                         <Typewriter
                             options={{
@@ -33,7 +35,7 @@ function Home() {
                 </div>
                 <div className='w-70-100'>
                     <p className='about-discription'>I am a dedicated <strong>full-stack developer</strong> and technology enthusiast
-                        with over <b>+1.5 years</b> of hands-on experience in designing,
+                        with over years of hands-on experience in designing,
                         developing, and maintaining dynamic web applications.
                         I am highly passionate about working on innovative and challenging projects,
                         consistently seeking opportunities to expand my knowledge and skill set.
