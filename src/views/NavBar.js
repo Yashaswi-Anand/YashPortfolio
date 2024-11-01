@@ -28,7 +28,7 @@ const NavBar = () => {
                     <li><a href="#skills"><FontAwesomeIcon icon={faCogs} /> <span className="nav-text">Skills</span></a></li>
                     <li><a href="#experience"><FontAwesomeIcon icon={faBriefcase} /> <span className="nav-text">Experience</span></a></li>
                     <li><a href="#education"><FontAwesomeIcon icon={faGraduationCap} /> <span className="nav-text">Education</span></a></li>
-                    <li><a href="#portfolio"><FontAwesomeIcon icon={faProjectDiagram} /> <span className="nav-text">Portfolio</span></a></li>
+                    <li><a href="#project"><FontAwesomeIcon icon={faProjectDiagram} /> <span className="nav-text">Project</span></a></li>
                     <li><a href="#achievements"><FontAwesomeIcon icon={faTrophy} /> <span className="nav-text">Achievements</span></a></li>
                     <li><a href="#contact"><FontAwesomeIcon icon={faEnvelope} /> <span className="nav-text">Contact</span></a></li>
                 </ul>

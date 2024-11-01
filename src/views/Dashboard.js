@@ -3,6 +3,8 @@ import NavBar from './NavBar';
 import Home from './Home';
 import Skills from './Skills';
 import Experience from './Experience';
+import Education from './Education';
+import Project from './Project';
 
 function Dashboard() {
   return (
@@ -12,19 +14,17 @@ function Dashboard() {
         <section id="home">
           <Home/>
         </section>
-        <section id="skills">
-          <Skills/>
-        </section>
         <section id="experience">
           <Experience/>
         </section>
-        <section id="education">
-          <h2>Education</h2>
-          <p>Details about my educational background are here.</p>
+        <section id="skills">
+          <Skills/>
         </section>
-        <section id="portfolio">
-          <h2>Portfolio</h2>
-          <p>View some of my previous work and projects.</p>
+        <section id="education">
+          <Education/>
+        </section>
+        <section id="project">
+          <Project/>
         </section>
         <section id="achievements">
           <h2>Achievements</h2>

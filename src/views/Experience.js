@@ -1,13 +1,17 @@
+import { faBriefcase } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
 function Experience() {
     return (
-        <div className='skills-section'>
-            <h1>Experience</h1>
+        <div className='section-screen'>
+            <div className='d-flex justify-center align-center g-10'>
+                <span><FontAwesomeIcon icon={faBriefcase} /></span><span><h1>Experience</h1></span>
+            </div>
             <div className='m-t-30'>
                 <div class="d-flex space-between flex-direction">
                     <div>
-                        <img src="https://upjao.ai/wp-content/uploads/2023/10/Upjao-Logo-1.png" />
+                        <img src="https://upjao.ai/wp-content/uploads/2023/10/Upjao-Logo-1.png" alt='logo'/>
                     </div>
                     <div>
                         <h3 className='p-0 m-0'> Full Stack Developer </h3>
@@ -22,7 +26,7 @@ function Experience() {
                             authentication systems with <b>AWS Cognito</b> and middleware using
                             Node.js. Expanded proficiency by creating some APIs in Go.</li>
                         <li>Transitioned backend data architecture from MongoDB to
-                            <b>PostgreSQL</b>, achieving performance. Implemented <b>Redis</b> caching to
+                            <b> PostgreSQL</b>, achieving performance. Implemented <b>Redis</b> caching to
                             optimize data retrieval and enhance system efficiency.
                         </li>
                         <li>Engineered multiple web applications, including a comprehensive

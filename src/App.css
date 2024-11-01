@@ -72,7 +72,7 @@
     color: #0077b5;
   }
 
-  #about, #skills, #experience, #education, #portfolio, #achievements, #contact {
+  #about, #skills, #experience, #education, #project, #achievements, #contact {
     /* background-color: #fff; */
   }
 
@@ -131,7 +131,7 @@
   }
 
   .sticky_menu {
-    background-color:#c6e2ff;
+    background-color: #c6e2ff;
     border: 1px solid a4c4f6;
     border-radius: 20px;
     width: 50%;
@@ -215,18 +215,11 @@
 
   /* Skills Start */
 
- .skills-section {
-    width: 90%; /* Adjust this width as needed */
+  .section-screen {
+    width: 90%; 
     margin: auto;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    /* background-color: red; */
- }
-
-  .skills-section h2 {
-      text-align: left;
-      color: #a06340; /* Matches the brownish header color */
-      margin-bottom: 20px;
   }
 
   .skills-category h4 {
@@ -240,6 +233,13 @@
   }
 
   /* Skill END */
+
+  /* Eduction */
+  .education-logo{
+    height: 60%;
+    width: 30%;
+   
+  }
 
   /* General styles remain the same */
 

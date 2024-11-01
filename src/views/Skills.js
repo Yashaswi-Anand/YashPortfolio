@@ -1,10 +1,14 @@
 import React from 'react'
+import { faBriefcase } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Skills() {
     return (
         <div>
-            <div class="skills-section">
-                <h2>Skill</h2>  
+            <div class="section-screen">
+                <div className='d-flex justify-center align-center g-10'>
+                    <span><FontAwesomeIcon icon={faBriefcase} /></span><span><h1>Skill</h1></span>
+                </div>
                 <div class="skills-category">
                     <h4>Programming Languages</h4>
                     <p>Java, JavaScript</p>
