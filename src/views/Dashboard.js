@@ -5,6 +5,7 @@ import Skills from './Skills';
 import Experience from './Experience';
 import Education from './Education';
 import Project from './Project';
+import Contact from './Contact';
 
 function Dashboard() {
   return (
@@ -32,7 +33,7 @@ function Dashboard() {
         </section>
         <section id="contact">
           <h2>Contact</h2>
-          <p>Get in touch with me through this section.</p>
+          <Contact/>
         </section>
       </div>
     </div>
