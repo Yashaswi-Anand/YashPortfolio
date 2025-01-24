@@ -22,7 +22,7 @@ function Home() {
                     <img 
                     src='https://marketplace.canva.com/EAFuJ5pCLLM/1/0/1600w/canva-black-and-gold-simple-business-man-linkedin-profile-picture-BM_NPo97JwE.jpg'
                     // src= 'https://photos.google.com/share/AF1QipPTZBUQpouvqDksdhjb-3TsGVDjBCcSV0Nb3L7hfXdcjOu5Y_3gsz1eRlB17d3DpA/photo/AF1QipPbU09ele-ayR6Sfg6xNQBIPxqm6L2ZRrEobHOc?key=dGtWZmlvdkJKS2I2TzBjQ3lNM0ZBYkpBaE9sSHZn'
-                    height={200} width={200} style={{ 'borderRadius': '50%' }} />
+                    height={200} width={200} style={{ 'borderRadius': '50%' }} alt = "profile_image"/>
                     <p className='type-writer w-100'>
                         <Typewriter
                             options={{
