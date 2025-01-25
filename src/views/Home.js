@@ -3,7 +3,7 @@ import Typewriter from 'typewriter-effect';
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-const profile = '../assets/images/_yashanand.jpg';
+// const profile = '../assets/images/_yashanand.jpg';
 
 function Home() {
     return (
