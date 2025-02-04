@@ -32,6 +32,9 @@
   .g-30 { gap: 30px; }
   .g-40 { gap: 40px; }
 
+  /* color */
+  .white { color: lightskyblue;}
+
 
   /* Sections */
   .content {
@@ -307,6 +310,7 @@
   }
 
   .card-container {
+    padding: 50px;
     gap: 15px; /* Reduce spacing between cards */
   }
 

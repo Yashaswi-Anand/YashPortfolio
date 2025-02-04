@@ -1,6 +1,7 @@
 import React from 'react'
 import { faBriefcase } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import CardView from '../components/CardView';
 
 function Education() {
     const educationData = [
@@ -39,6 +40,8 @@ function Education() {
                 <span><FontAwesomeIcon icon={faBriefcase} /></span><span><h1>Education</h1></span>
             </div>
             <div>
+                {/* <CardView /> */}
+
                 {educationData.map((item, index) => (
                     <div key={index} className='d-flex m-t-20 align-center' style={{backgroundColor:''}}>
                         <div className='education-logo'>
