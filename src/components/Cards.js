@@ -11,7 +11,7 @@ const Cards = ({ data }) => {
                             <div style={{padding: 10}}>
                                 <img
                                     src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-                                    alt="Card Image"
+                                    alt="Card"
                                     width={281} height={305}
                                 />
                             </div>

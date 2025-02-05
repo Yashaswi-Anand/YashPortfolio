@@ -7,10 +7,10 @@ const CardView = () => {
             <div className="card">
                 <div className="img" />
                 <div className="textBox">
-                    <div className="textContent">
-                        <p className="h1">Clans of Clash</p>
-                        <span className="span">12 min ago</span>
-                    </div>
+                    <p className='p'> Xhattmahs</p>
+                    <p className='p'> Xhattmahs</p>
+                    <p className='p'> Xhattmahs</p>
+                    <p className='p'> Xhattmahs</p>
                     <p className="p">Xhattmahs is not attacking your base!</p>
                     <div>
                     </div>
@@ -54,7 +54,7 @@ const StyledWrapper = styled.div`
   .textBox {
     width: calc(100% - 90px);
     margin-left: 10px;
-    color: white;
+    color: white !important;
     font-family: 'Poppins' sans-serif;
   }
 
