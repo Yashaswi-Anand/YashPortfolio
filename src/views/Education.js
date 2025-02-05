@@ -40,7 +40,7 @@ function Education() {
                 <span><FontAwesomeIcon icon={faBriefcase} /></span><span><h1>Education</h1></span>
             </div>
             <div>
-                {/* <CardView /> */}
+                <CardView />
 
                 {educationData.map((item, index) => (
                     <div key={index} className='d-flex m-t-20 align-center' style={{backgroundColor:''}}>

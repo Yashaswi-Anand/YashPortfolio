@@ -23,8 +23,7 @@ const CardView = () => {
 const StyledWrapper = styled.div`
   .card {
     width: 100%;
-    max-width: 290px;
-    height: 70px;
+    height: 200px;
     background: #353535;
     border-radius: 20px;
     display: flex;
@@ -40,9 +39,9 @@ const StyledWrapper = styled.div`
   }
 
   .img {
-    width: 50px;
-    height: 50px;
-    margin-left: 10px;
+    width: 150px;
+    height: 150px;
+    margin-left: 20px;
     border-radius: 10px;
     background: linear-gradient(#d7cfcf, #9198e5);
   }
@@ -62,7 +61,7 @@ const StyledWrapper = styled.div`
   .textContent {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-start;
   }
 
   .span {
