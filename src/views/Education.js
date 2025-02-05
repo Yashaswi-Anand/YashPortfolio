@@ -9,7 +9,7 @@ function Education() {
             degree: 'B.Tech',
             institution: 'Motihari College Of Engineering',
             date: 'Sep 2018 - Aug 2022',
-            // description: "Algorithm, Data Structure, Operating System, Computer Network, Software Engineering, Discrete Mathematics, Computer Architecture and Organization, Theory of Computation, Compiler Design",
+            description: "Algorithm, Data Structure, Operating System, Computer Network, Software Engineering, Discrete Mathematics, Computer Architecture and Organization, Theory of Computation, Compiler Design",
             grade: '8.68 CGPA',
             logo: 'https://upload.wikimedia.org/wikipedia/en/3/37/Motihari_College_of_Engineering_logo.jpg',
             branch: 'Computer Science and Engineering',
@@ -40,22 +40,8 @@ function Education() {
                 <span><FontAwesomeIcon icon={faBriefcase} /></span><span><h1>Education</h1></span>
             </div>
             <div>
-                <CardView />
-
                 {educationData.map((item, index) => (
-                    <div key={index} className='d-flex m-t-20 align-center' style={{backgroundColor:''}}>
-                        <div className='education-logo'>
-                            <img src={item.logo} style={{ borderRadius: '10px'}}  alt={item.institution} height={'45%'} width={'45%'}/>
-                        </div>
-                        <div className="education-details">
-                            <h3 className='m-0 p-0'>{item.degree}</h3>
-                            <h4 className='m-0 p-0'>{item.institution}</h4>
-                            <p className='m-0 p-0'>{item.date}</p>
-                            <p className='m-0 p-0'>{item.grade}</p>
-                            <p className='m-0 p-0'>{item.branch}</p>
-                            <p className='m-0 p-0'>{item.description}</p>
-                        </div>
-                    </div>
+                    <CardView item={item} key={index}/>
                 ))}
             </div>
             

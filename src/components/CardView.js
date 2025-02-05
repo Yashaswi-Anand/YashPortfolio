@@ -1,17 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CardView = () => {
+const CardView = ({ item }) => {
     return (
         <StyledWrapper>
             <div className="card">
-                <div className="img" />
+                <div className="img">
+                    <img className='image-style' src={item.logo} alt="img"/>
+                </div>
                 <div className="textBox">
-                    <p className='p'> Xhattmahs</p>
-                    <p className='p'> Xhattmahs</p>
-                    <p className='p'> Xhattmahs</p>
-                    <p className='p'> Xhattmahs</p>
-                    <p className="p">Xhattmahs is not attacking your base!</p>
+                    <p className='p'> {item.degree}</p>
+                    <p className='p'> {item.institution}</p>
+                    <p className='p'> {item.date}</p>
+                    <p className='p'> {item.grade}</p>
+                    <p className="p">{item.branch}</p>
+                    <p className="p">{item.description}</p>
                     <div>
                     </div>
                 </div>
@@ -24,13 +27,14 @@ const StyledWrapper = styled.div`
   .card {
     width: 100%;
     height: 200px;
-    background: #353535;
+    background:rgb(74, 74, 74);
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: left;
     backdrop-filter: blur(10px);
     transition: 0.5s ease-in-out;
+    margin-bottom: 10px;
   }
 
   .card:hover {
@@ -39,11 +43,17 @@ const StyledWrapper = styled.div`
   }
 
   .img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 180px;
     margin-left: 20px;
     border-radius: 10px;
     background: linear-gradient(#d7cfcf, #9198e5);
+  }
+
+  .image-style {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
   }
 
   .card:hover > .img {
@@ -76,6 +86,7 @@ const StyledWrapper = styled.div`
   .p {
     font-size: 12px;
     font-weight: lighter;
+    color: white !important;
   }`;
 
 export default CardView
