@@ -33,15 +33,15 @@ function Home() {
                     </p>
                 </div>
                 <div className='w-70-100'>
-                    <p className='about-discription'>I am a dedicated <strong>full-stack developer</strong> and technology enthusiast
-                        with over years of hands-on experience in designing,
-                        developing, and maintaining dynamic web applications.
-                        I am highly passionate about working on innovative and challenging projects,
-                        consistently seeking opportunities to expand my knowledge and skill set.
-                        I excel in both collaborative team environments and independent work,
-                        with a proven ability to deliver high-quality results.
-                        My strong commitment to continuous learning and professional
-                        growth drives my ability to adapt to evolving technologies and industry trends.</p>
+                    <p className='about-discription'>I am a passionate <strong>full-stack developer</strong> and technology 
+                        enthusiast with extensive hands-on experience in designing, 
+                        developing, and maintaining dynamic web applications. 
+                        I thrive on tackling innovative and challenging projects, 
+                        always eager to enhance my expertise and expand my skill set. 
+                        Whether collaborating within a team or working independently,
+                         I consistently deliver high-quality results. My dedication to 
+                         continuous learning and professional growth enables me to adapt 
+                         seamlessly to evolving technologies and industry trends.</p>
                 </div>
             </div>
         </div>

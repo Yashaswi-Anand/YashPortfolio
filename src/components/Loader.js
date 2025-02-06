@@ -20,17 +20,18 @@ const Loader = () => {
 const StyledWrapper = styled.div`
   .pyramid-loader {
     position: relative;
-    width: 10px;
-    height: 10px;
+    width: 5px;
+    height: 5px;
     display: block;
+    margin-left: 5%;
     transform-style: preserve-3d;
     transform: rotateX(-20deg);
   }
 
   .wrapper {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     transform-style: preserve-3d;
     animation: spin 4s linear infinite;
   }
