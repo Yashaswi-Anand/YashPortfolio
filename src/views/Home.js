@@ -3,7 +3,7 @@ import Typewriter from 'typewriter-effect';
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-// const profile = '../assets/images/_yashanand.jpg';
+const logo = require('../assets/logo.jpg')
 
 function Home() {
     return (
@@ -11,20 +11,17 @@ function Home() {
             <div className='d-flex justify-center align-center flex-direction-column w-100'>
                 <h2 className='r-margin-top'>Yashaswi Anand</h2>
                 <div className='d-flex w-10 0 g-40 justify-center justify-align-center'>
-                    <FaLinkedinIn className='social-icons'onClick={() => window.open('https://www.linkedin.com/in/yashaswi-anand/')}/>
-                    <FaGithub className='social-icons' onClick={() => window.open('https://github.com/yashaswi-anand')}/>
-                    <MdEmail className='social-icons' onClick={() => window.open('mailto:anandyash1711@gmail.com')}/>
+                    <FaLinkedinIn className='social-icons' onClick={() => window.open('https://www.linkedin.com/in/yashaswi-anand/')} />
+                    <FaGithub className='social-icons' onClick={() => window.open('https://github.com/yashaswi-anand')} />
+                    <MdEmail className='social-icons' onClick={() => window.open('mailto:anandyash1711@gmail.com')} />
                     <p className='social-icons m-0 p-0' onClick={() => window.open('https://drive.google.com/file/d/1yJTL04HKfLu_WqkPKTreIT-ygT4Fxr6U/view?usp=sharing')}>Resume</p>
                 </div>
             </div>
 
             <div className='d-flex justify-center align-center w-100 m-t-50 flex-direction'>
-                <div className='d-flex justify-center align-center flex-direction-column w-30-100 '>
-                    <img  
-                    // src={profile}
-                    src='https://marketplace.canva.com/EAFuJ5pCLLM/1/0/1600w/canva-black-and-gold-simple-business-man-linkedin-profile-picture-BM_NPo97JwE.jpg'
-                    // src= 'https://photos.google.com/share/AF1QipPTZBUQpouvqDksdhjb-3TsGVDjBCcSV0Nb3L7hfXdcjOu5Y_3gsz1eRlB17d3DpA/photo/AF1QipPbU09ele-ayR6Sfg6xNQBIPxqm6L2ZRrEobHOc?key=dGtWZmlvdkJKS2I2TzBjQ3lNM0ZBYkpBaE9sSHZn'
-                    height={200} width={200} style={{ 'borderRadius': '50%' }} alt = "profile_image"/>
+                <div className='d-flex justify-center align-center flex-direction-column w-30-100'>
+                    <img src={logo}
+                        height={180} width={180} style={{ 'borderRadius': '50%' }} alt="profile_image" />
                     <p className='type-writer w-100'>
                         <Typewriter
                             options={{

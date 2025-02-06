@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faCogs, faBriefcase, faGraduationCap, faProjectDiagram, faTrophy, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import Loader from '../components/Loader';
 
 const NavBar = () => {
     const [isFixed, setIsFixed] = useState(false);
@@ -22,6 +23,9 @@ const NavBar = () => {
 
     return (
         <nav className={isFixed ? 'sticky' : 'navbar'}>
+            <div >
+                <Loader />
+            </div>
             <div className="navbar-container">
                 <ul className={isFixed ? 'navbar-items sticky_menu' : 'navbar-items'}>
                     <li><a href="#home"><FontAwesomeIcon icon={faHome} /> <span className="nav-text">Home</span></a></li>
