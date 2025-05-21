@@ -33,7 +33,7 @@ function Home() {
                     </p>
                 </div>
                 <div className='w-70-100'>
-                    <p className='about-discription'>I am a passionate <strong>full-stack developer</strong> and technology 
+                    {/* <p className='about-discription'>I am a passionate <strong>full-stack developer</strong> and technology 
                         enthusiast with extensive hands-on experience in designing, 
                         developing, and maintaining dynamic web applications. 
                         I thrive on tackling innovative and challenging projects, 
@@ -41,7 +41,13 @@ function Home() {
                         Whether collaborating within a team or working independently,
                          I consistently deliver high-quality results. My dedication to 
                          continuous learning and professional growth enables me to adapt 
-                         seamlessly to evolving technologies and industry trends.</p>
+                         seamlessly to evolving technologies and industry trends.</p> */}
+
+                    <p className='about-discription'>Results-driven and detail-oriented professional with proven experience in <strong>full-stack software 
+                        development</strong>, backend architecture, and web application engineering. Proficient in <i>Python,
+                        Java, Node.js, ReactJs, PostgreSQL, and AWS</i>. Experienced in building scalable systems, 
+                        optimizing performance, and managing CI/CD workflows. Seeking impactful roles to contribute technical expertise 
+                        and drive innovation.</p>
                 </div>
             </div>
         </div>
