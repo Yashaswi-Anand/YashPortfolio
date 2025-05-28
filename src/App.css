@@ -129,8 +129,21 @@
     transition: background-color 0.3s ease;
   }
 
+  .navbar-items li a {
+    color: gray;
+    text-decoration: none;
+    padding: 5px;
+    /* transition: all 0.3s ease; */
+  }
+
+  .navbar-items li.active a {
+      color: green;
+      font-weight: bold;
+      border-bottom: 3px solid green;
+  }
+
   .navbar-items a:hover {
-    color: green;
+    color: gray;
     font-style: italic;
   }
 

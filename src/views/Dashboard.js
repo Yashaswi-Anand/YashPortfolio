@@ -7,6 +7,7 @@ import Education from './Education';
 import Project from './Project';
 import Contact from './Contact';
 import Pattern from '../components/Pattern';
+import Achivement from './Achivement';
 
 function Dashboard() {
   return (
@@ -30,12 +31,13 @@ function Dashboard() {
             <Project />
           </section>
           <section id="achievements">
-            <h2>Achievements</h2>
-            <p>Here are some of my significant achievements.</p>
+            <Achivement/>
           </section>
           <section id="contact">
             <h2>Contact</h2>
             <Contact />
+          </section>
+          <section className='m-t-100'>
           </section>
         </div>
       </div>
