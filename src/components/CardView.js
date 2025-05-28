@@ -45,6 +45,7 @@ const StyledWrapper = styled.div`
   .card:hover {
     cursor: pointer;
     transform: scale(1.05);
+    margin-top: 10px !important;
   }
 
   .img {

@@ -44,7 +44,6 @@ function Education() {
                     <CardView item={item} key={index}/>
                 ))}
             </div>
-            
         </div>
     )
 }
