@@ -5,60 +5,84 @@ const Introduction_Algorithms_And_Analysis = require('../assets/achivement/Intro
 const Python = require('../assets/achivement/Python.jpg')
 const Liveasy_internship = require('../assets/achivement/LiveasyInternshipCertificate.jpg')
 const dsa_java = require('../assets/achivement/NPTEL20CS85S81990306201424.jpg')
+const codeKaze = require('../assets/achivement/codekaze.png');
+const tcs_nqt = require('../assets/achivement/tcs_nqt.png');
+const nodejs_cerificate = require('../assets/achivement/nodejs_certificate.png');
+const gate_score = require('../assets/achivement/gate_score.png');
 
 
 // Component to render each card
 const CardView = ({ item }) => {
-    return (
-        <StyledWrapper>
-            <div className="card">
-                <div className="img">
-                    <img className='image-style' src={item.logo} alt="img" />
-                </div>
-                <div className="textBox">
-                    <p className='p'> {item.title}</p>
-                    <p className='p'> {item.date}</p>
-                </div>
-            </div>
-        </StyledWrapper>
-    );
+  return (
+    <StyledWrapper>
+      <div className="card">
+        <div className="img">
+          <img className='image-style' src={item.logo} alt="img" />
+        </div>
+        <div className="textBox">
+          <p className='p'> {item.title}</p>
+          <p className='p'> {item.date}</p>
+        </div>
+      </div>
+    </StyledWrapper>
+  );
 }
 
 function Achivement() {
-    const achievements_date = [
-        {
-            title: "Introduction to Algorithms and Analysis",
-            date: "2022",
-            logo: Introduction_Algorithms_And_Analysis
-        },
-        {
-            title: "Python",
-            date: "2022",
-            logo: Python
-        },
-        {
-            title: "Liveasy Internship",
-            date: "2022",
-            logo: Liveasy_internship
-        },
-        {
-            title: "DSA in Java",
-            date: "2022",
-            logo: dsa_java
-        }
-    ]
-    return (
-        <div className='section-screen'>
-            <div className='d-flex justify-center align-center g-10'>
-                <span><FontAwesomeIcon icon={faBriefcase} /></span><span><h1>Achievements</h1></span>
-            </div>
-            <CarouselWrapper className="carousel-wrapper">
-                {achievements_date.map((item, index) => (
-                    <CardView item={item} key={index} />
-                ))}
-            </CarouselWrapper>
-        </div>
-    )
+  const achievements_date = [
+    {
+      title: "Gate Score",
+      date: "2025",
+      logo: gate_score
+    },
+    {
+      title: "Excellence in NodeJs",
+      date: "2022",
+      logo: nodejs_cerificate
+    },
+    {
+      title: "CodeKaze Certificate",
+      date: "2022",
+      logo: codeKaze
+    },
+    {
+      title: "Introduction to Algorithms and Analysis",
+      date: "2021",
+      logo: Introduction_Algorithms_And_Analysis
+    },
+    {
+      title: "Liveasy Internship",
+      date: "2021",
+      logo: Liveasy_internship
+    },
+    {
+      title: "TCS NQT Score Card",
+      date: "2021",
+      logo: tcs_nqt
+    },
+    {
+      title: "Data Structure and Algorithm in Java",
+      date: "2020",
+      logo: dsa_java
+    },
+    {
+      title: "Python Programming",
+      date: "2019",
+      logo: Python
+    },
+  ]
+  return (
+    <div className='section-screen'>
+      <div className='d-flex justify-center align-center g-10'>
+        <span><FontAwesomeIcon icon={faBriefcase} /></span><span><h1>Achievements</h1></span>
+      </div>
+      <CarouselWrapper className="carousel-wrapper">
+        {achievements_date.map((item, index) => (
+          <CardView item={item} key={index} />
+        ))}
+      </CarouselWrapper>
+    </div>
+  )
 }
 
 export default Achivement
@@ -81,6 +105,10 @@ const CarouselWrapper = styled.div`
     max-height: none;
     scroll-snap-type: none;
   }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const StyledWrapper = styled.div`
@@ -94,12 +122,8 @@ const StyledWrapper = styled.div`
     justify-content: left;
     backdrop-filter: blur(10px);
     transition: 0.5s ease-in-out;
-    margin-bottom: 10px;
-    flex-direction: row;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
+    margin-bottom: 20px;
+    flex-direction: column;
   }
 
   .card:hover {
@@ -109,9 +133,8 @@ const StyledWrapper = styled.div`
   }
 
   .img {
-    width: 200px;
-    height: 180px;
-    margin-left: 20px;
+    width: 400px;
+    height: 300px;
     border-radius: 10px;
     background: linear-gradient(#d7cfcf, #9198e5);
 
