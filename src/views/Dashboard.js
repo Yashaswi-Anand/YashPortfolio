@@ -34,7 +34,6 @@ function Dashboard() {
             <Achivement/>
           </section>
           <section id="contact">
-            <h2>Contact</h2>
             <Contact />
           </section>
           <section className='m-t-100'>
