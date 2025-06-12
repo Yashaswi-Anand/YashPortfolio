@@ -28,8 +28,10 @@ const Cards = ({ data }) => {
                         </div>
                         <div className="front-content">
                             <div>
-                                <small className="badge">{data.project_name}</small>
+                                <small className="badge" style={{ color: 'lightblue', fontWeight: 'bold'}}>{data.project_name}</small>
                                 <div className='m-t-10 content-text'>{data.content}</div>
+                                <p className='m-t-10' style={{fontSize: 16, marginLeft:10, fontWeight: 'bold', color: 'lightblue'}}>Technologies Used:</p>
+                                <div className='m-t-10 content-text'>{data.technologies}</div>
                             </div>
                             <div className="description">
                                 <div className="title">
