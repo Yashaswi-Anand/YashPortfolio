@@ -1,28 +1,36 @@
 import Cards from '../components/Cards';
 import { faBriefcase } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import polling from './../assets/projects/poling_img.png';
 
 function Project() {
     const cards = [
         {
-            project_name: "Card 1 Front",
+            project_name: "Employee Review System",
+            back: "Card 4 Back",
+            image: "https://github.com/Yashaswi-Anand/RealTime-Chat-Frontend/raw/master/screenshots/Online.png",
+            content: ``
+        },
+        {
+            project_name: "Time2Achieve",
             back: "Card 1 Back",
-            image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+            image: "https://raw.githubusercontent.com/Yashaswi-Anand/Time2Achieve/master/images/new.png"
         },
         {
-            project_name: "Card 2 Front",
+            project_name: "Polling System API",
             back: "Card 2 Back",
-            image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+            image: polling
         },
         {
-            project_name: "Card 3 Front",
+            project_name: "Habit Tracker",
             back: "Card 3 Back",
-            image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+            image: "https://github.com/Yashaswi-Anand/Habit-Tracker/raw/master/screenshots/habits.png"
         },
         {
-            project_name: "Card 4 Front",
-            back: "Card 3 Back",
-            image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+            project_name: "Employee Review System",
+            back: "Card 4 Back",
+            image: "https://github.com/Yashaswi-Anand/EmployeeReviewSystem/raw/master/screenshots/signup.png",
+            content: `This application that allow to submit feedback toward each other's performance. Any employee register and login this application after that views performance rating and review their peformance for gives some feedbacks.`
         }
     ];
     return (

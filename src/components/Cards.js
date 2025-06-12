@@ -12,7 +12,7 @@ const Cards = ({ data }) => {
                                 <img
                                     src={data.image}
                                     alt="Card"
-                                    width={281} height={305}
+                                    width={'100%'} height={305}
                                 />
                             </div>
                         </div>
@@ -28,14 +28,14 @@ const Cards = ({ data }) => {
                         </div>
                         <div className="front-content">
                             <div>
-                                <small className="badge">Pasta</small>
+                                <small className="badge">{data.project_name}</small>
                                 <div className='m-t-10'>Content</div>
                             </div>
                             <div className="description">
                                 <div className="title">
-                                    <p className="title">
+                                    {/* <p className="title">
                                         <strong>{data.project_name}</strong>
-                                    </p>
+                                    </p> */}
                                     <svg fillRule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style={{ mixBlendMode: 'normal' }} textAnchor="none" fontSize="none" fontWeight="none" fontFamily="none" strokeDashoffset={0} strokeDasharray strokeMiterlimit={10} strokeLinejoin="miter" strokeLinecap="butt" strokeWidth={1} stroke="none" fillRule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z" /></g></g></svg>
                                 </div>
                                 <p className="card-footer">
@@ -53,8 +53,15 @@ const Cards = ({ data }) => {
 const StyledWrapper = styled.div`
   .card {
     overflow: visible;
-    width: 300px;
+    width: 420px;
     height: 320px;
+  }
+
+  @media (max-width: 500px) {
+    .card {
+      width: 350px;
+      height: 340px;
+    }
   }
 
   .content {
@@ -145,6 +152,9 @@ const StyledWrapper = styled.div`
     border-radius: 10px;
     backdrop-filter: blur(2px);
     width: fit-content;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 600;
   }
 
   .description {
