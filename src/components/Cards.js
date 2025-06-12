@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const Cards = ({ data }) => {
@@ -60,7 +59,7 @@ const StyledWrapper = styled.div`
   @media (max-width: 500px) {
     .card {
       width: 350px;
-      height: 340px;
+      height: 320px;
     }
   }
 
