@@ -1,52 +1,62 @@
 import styled from 'styled-components';
 
 const Cards = ({ data }) => {
-    return (
-        <StyledWrapper>
-            <div className="card">
-                <div className="content">
-                    <div className="back">
-                        <div className="back-content">
-                            <div style={{padding: 10}}>
-                                <img
-                                    src={data.image}
-                                    alt="Card"
-                                    width={'100%'} height={305}
-                                    style={{objectFit: 'fill'}}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="front">
-                        <div className="img">
-                            <div className="circle">
-                            </div>
-                            <div className="circle" id="right">
-                            </div>
-                            <div className="circle" id="bottom">
-                            </div>
-                        </div>
-                        <div className="front-content">
-                            <div>
-                                <small className="badge" style={{ color: 'lightblue', fontWeight: 'bold'}}>{data.project_name}</small>
-                                <div className='m-t-10 content-text'>{data.content}</div>
-                                <p className='m-t-10' style={{fontSize: 16, marginLeft:10, fontWeight: 'bold', color: 'lightblue'}}>Technologies Used:</p>
-                                <div className='m-t-10 content-text'>{data.technologies}</div>
-                            </div>
-                            <div className="description">
-                                <div className="title">
-                                    <svg className='badge' fillRule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style={{ mixBlendMode: 'normal' }} textAnchor="none" fontSize="none" fontWeight="none" fontFamily="none" strokeDashoffset={0} strokeDasharray strokeMiterlimit={10} strokeLinejoin="miter" strokeLinecap="butt" strokeWidth={1} stroke="none" fillRule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z" /></g></g></svg>
-                                    <span className='badge project-link'>Github</span>
-                                    <span className='badge project-link'>Live</span>
-                                </div>
-                                <p></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <StyledWrapper>
+      <div className="card">
+        <div className="content">
+          <div className="back">
+            <div className="back-content">
+              <div style={{ padding: 10 }}>
+                <img
+                  src={data.image}
+                  alt="Card"
+                  width={'100%'} height={305}
+                  style={{ objectFit: 'fill' }}
+                />
+              </div>
             </div>
-        </StyledWrapper>
-    );
+          </div>
+          <div className="front">
+            <div className="img">
+              <div className="circle">
+              </div>
+              <div className="circle" id="right">
+              </div>
+              <div className="circle" id="bottom">
+              </div>
+            </div>
+            <div className="front-content">
+              <div>
+                <small className="badge" style={{ color: 'lightblue', fontWeight: 'bold' }}>{data.project_name}</small>
+                <div className='m-t-10 content-text'>{data.content}</div>
+                <p className='m-t-10' style={{ fontSize: 16, marginLeft: 10, fontWeight: 'bold', color: 'lightblue' }}>Technologies Used:</p>
+                <div className='m-t-10 content-text'>{data.technologies}</div>
+              </div>
+              <div className="description">
+                <div className="title">
+                  <svg className='badge' fillRule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style={{ mixBlendMode: 'normal' }} textAnchor="none" fontSize="none" fontWeight="none" fontFamily="none" strokeDashoffset={0} strokeDasharray strokeMiterlimit={10} strokeLinejoin="miter" strokeLinecap="butt" strokeWidth={1} stroke="none" fillRule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z" /></g></g></svg>
+                  <div>
+                    {data.github && (
+                      <a href={data.github} target="_blank" rel="noopener noreferrer" className="badge project-link">
+                        Github
+                      </a>
+                    )}
+                    {data.live && (
+                      <a href={data.live} target="_blank" rel="noopener noreferrer" className="badge project-link">
+                        Live
+                      </a>
+                    )}
+                  </div>
+                </div>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </StyledWrapper>
+  );
 }
 
 const StyledWrapper = styled.div`
