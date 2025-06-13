@@ -14,7 +14,7 @@ function Home() {
                     <FaLinkedinIn className='social-icons' onClick={() => window.open('https://www.linkedin.com/in/yashaswi-anand/')} />
                     <FaGithub className='social-icons' onClick={() => window.open('https://github.com/yashaswi-anand')} />
                     <MdEmail className='social-icons' onClick={() => window.open('mailto:anandyash1711@gmail.com')} />
-                    <p className='social-icons m-0 p-0' onClick={() => window.open('https://drive.google.com/file/d/1yJTL04HKfLu_WqkPKTreIT-ygT4Fxr6U/view?usp=sharing')}>Resume</p>
+                    <p className='social-icons m-0 p-0' onClick={() => window.open('https://drive.google.com/file/d/1mh3vggLioADoscE3CBzPpIwLNxgYKU-r/view?usp=sharing')}>Resume</p>
                 </div>
             </div>
 
