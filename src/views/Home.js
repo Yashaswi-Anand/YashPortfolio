@@ -43,7 +43,7 @@ function Home() {
                          continuous learning and professional growth enables me to adapt 
                          seamlessly to evolving technologies and industry trends.</p> */}
 
-                    <p className='about-discription'>Results-driven and detail-oriented professional with proven experience in <strong>full-stack software 
+                    <p className='about-discription'>Results-driven and detail-oriented professional with proven experience in a <strong>full-stack software 
                         development</strong>, backend architecture, and web application engineering. Proficient in <i>Python,
                         Java, Node.js, ReactJs, PostgreSQL, and AWS</i>. Experienced in building scalable systems, 
                         optimizing performance, and managing CI/CD workflows. Seeking impactful roles to contribute technical expertise 
