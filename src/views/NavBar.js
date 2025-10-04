@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faCogs, faBriefcase, faGraduationCap, faProjectDiagram, faTrophy, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,7 +8,7 @@ const NavBar = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
-    const navItems = [
+    const navItems = useMemo(() => [
         { id: 'home', icon: faHome, label: 'Home' },
         { id: 'skills', icon: faCogs, label: 'Skills' },
         { id: 'experience', icon: faBriefcase, label: 'Experience' },
@@ -16,7 +16,7 @@ const NavBar = () => {
         { id: 'project', icon: faProjectDiagram, label: 'Project' },
         { id: 'achievements', icon: faTrophy, label: 'Achievements' },
         { id: 'contact', icon: faEnvelope, label: 'Contact' }
-    ];
+    ], []);
 
     useEffect(() => {
         const handleScroll = () => {
