@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBriefcase, faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+import { faAddressCard, faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import { motion } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
 import AnimatedText from '../components/AnimatedText';
@@ -68,7 +68,7 @@ function Contact() {
           transition={{ duration: 0.8, delay: 0.4, type: "spring", stiffness: 200 }}
           whileHover={{ scale: 1.2, rotate: 360, transition: { duration: 0.6 } }}
         >
-          <FontAwesomeIcon icon={faBriefcase} size="lg" />
+          <FontAwesomeIcon icon={faAddressCard} size="lg" />
         </motion.span>
         <AnimatedText text="Contact" />
       </motion.div>

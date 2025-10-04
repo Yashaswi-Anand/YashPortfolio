@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBriefcase } from '@fortawesome/free-solid-svg-icons'
+import { faTrophy } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components';
 
 const Introduction_Algorithms_And_Analysis = require('../assets/achivement/Introduction_Algorithms_And_Analysis.jpg');
@@ -42,7 +42,7 @@ function Achivement() {
   return (
     <div className="section-screen">
       <div className="d-flex justify-center align-center g-10" style={{ marginBottom: "1rem" }}>
-        <FontAwesomeIcon icon={faBriefcase} size="lg" style={{ marginRight: "0.5rem" }} />
+        <FontAwesomeIcon icon={faTrophy} size="lg" style={{ marginRight: "0.5rem" }} />
         <h1>Achievements</h1>
       </div>
       <CarouselWrapper>

@@ -55,7 +55,7 @@ const NavBar = () => {
 
         window.addEventListener('scroll', handleScrollSpy, { passive: true });
         return () => window.removeEventListener('scroll', handleScrollSpy);
-    }, []);
+    }, [navItems]);
 
     const handleNavClick = (sectionId) => {
         setActiveSection(sectionId);

@@ -1,18 +1,17 @@
-import React from 'react'
 import { motion } from 'framer-motion';
-import { faBriefcase } from '@fortawesome/free-solid-svg-icons'
+import { faCogs } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import AnimatedSection from '../components/AnimatedSection';
 import AnimatedText from '../components/AnimatedText';
 
 function Skills() {
     const skillsData = [
-        { title: "Programming Languages", skills: "Java, JavaScript" },
-        { title: "Backend", skills: "NodeJs, HapiJs, GoLang" },
-        { title: "Databases", skills: "MySQL, PostgreSQL, MongoDB, Redis" },
-        { title: "DevOps", skills: "Docker, Kubernetes, AWS" },
-        { title: "Frontend", skills: "HTML, CSS, AngularJS, ReactJS, MaterialUI" },
-        { title: "Version Control", skills: "Git, Github, Gitlab" }
+        { title: "Programming", skills: "Java • JavaScript • Python" },
+        { title: "Backend", skills: "Node.js • Hapi.js • GoLang" },
+        { title: "Databases", skills: "MySQL • PostgreSQL • MongoDB • Redis" },
+        { title: "DevOps", skills: "Docker • Kubernetes • AWS" },
+        { title: "Frontend", skills: "React.js • Angular.js • Material-UI" },
+        { title: "Tools", skills: "Git • GitHub • GitLab • VS Code" }
     ];
 
     const containerVariants = {
@@ -27,8 +26,8 @@ function Skills() {
     };
 
     const skillCardVariants = {
-        hidden: { 
-            opacity: 0, 
+        hidden: {
+            opacity: 0,
             y: 50,
             scale: 0.9,
             rotateX: -15,
@@ -81,7 +80,7 @@ function Skills() {
     return (
         <AnimatedSection>
             <div className="section-screen">
-                <motion.div 
+                <motion.div
                     className='d-flex justify-center align-center g-10'
                     initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -93,7 +92,7 @@ function Skills() {
                         animate="visible"
                         whileHover="hover"
                     >
-                        <FontAwesomeIcon icon={faBriefcase} />
+                        <FontAwesomeIcon icon={faCogs} />
                     </motion.span>
                     <span>
                         <AnimatedText text="Skills" />
