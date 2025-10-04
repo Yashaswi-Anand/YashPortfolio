@@ -94,7 +94,7 @@ function Skills() {
                     >
                     </motion.span>
                     <div className='d-flex justify-center align-center g-10'>
-                        <span><FontAwesomeIcon icon={faCogs} size={50}/></span><span><h1>Skills</h1></span>
+                        <span><FontAwesomeIcon icon={faCogs} style={{ fontSize: '2.8rem' }} /></span><span><h1>Skills</h1></span>
                     </div>
                 </motion.div>
 

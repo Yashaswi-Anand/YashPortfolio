@@ -84,7 +84,7 @@ function Experience() {
                 transition={{ duration: 0.8, delay: 0.2 }}
             >
                 <div className='d-flex justify-center align-center g-10'>
-                    <span><FontAwesomeIcon icon={faBriefcase} size={50} /></span><span><h1>Experience</h1></span>
+                    <span><FontAwesomeIcon icon={faBriefcase} style={{ fontSize: '2.8rem' }} /></span><span><h1>Experience</h1></span>
                 </div>
             </motion.div>
 

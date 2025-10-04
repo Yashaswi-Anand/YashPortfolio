@@ -37,7 +37,7 @@ function Education() {
     return (
         <div className='section-screen'>
             <div className='d-flex justify-center align-center g-10'>
-                <span><FontAwesomeIcon icon={faGraduationCap} /></span><span><h1>Education</h1></span>
+                <span><FontAwesomeIcon icon={faGraduationCap} style={{ fontSize: '2.8rem' }} /></span><span><h1>Education</h1></span>
             </div>
             <div>
                 {educationData.map((item, index) => (
