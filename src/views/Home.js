@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 import { FaLinkedinIn } from "react-icons/fa";
@@ -140,7 +139,7 @@ function Home() {
                         className='d-flex justify-center align-center flex-direction-column w-30-100'
                         variants={itemVariants}
                     >
-                        <motion.img
+                        <img
                             src={logo}
                             height={180}
                             width={180}
@@ -149,14 +148,13 @@ function Home() {
                             variants={imageVariants}
                             whileHover={{
                                 scale: 1.1,
-                                rotate: 5,
                                 boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
                                 transition: { duration: 0.3 }
                             }}
                         />
 
                         <motion.div
-                            className='type-writer w-100'
+                            className='type-writer w-100 m-t-10'
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 1 }}
