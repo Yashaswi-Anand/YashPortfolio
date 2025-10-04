@@ -2,7 +2,7 @@ import { faBriefcase, faCalendarAlt, faMapMarkerAlt, faCode, faDatabase, faCloud
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
-import AnimatedText from '../components/AnimatedText';
+// import AnimatedText from '../components/AnimatedText';
 
 function Experience() {
     const experienceData = [
@@ -10,7 +10,7 @@ function Experience() {
             company: "Upjao Agrotech Private Limited",
             position: "Full Stack Developer",
             duration: "Apr 2023 - Present",
-            location: "Remote",
+            location: "Ahemdabad",
             logo: "https://upjao.ai/wp-content/uploads/2023/10/Upjao-Logo-1.png",
             description: "Leading full-stack development initiatives in agricultural technology, focusing on scalable web applications and data optimization.",
             achievements: [
@@ -83,17 +83,9 @@ function Experience() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
             >
-                <motion.span
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4, type: "spring", stiffness: 200 }}
-                    whileHover={{ scale: 1.2, rotate: 360, transition: { duration: 0.6 } }}
-                >
-                    <FontAwesomeIcon icon={faBriefcase} />
-                </motion.span>
-                <span>
-                    <AnimatedText text="Experience" />
-                </span>
+                <div className='d-flex justify-center align-center g-10'>
+                    <span><FontAwesomeIcon icon={faBriefcase} size={50} /></span><span><h1>Experience</h1></span>
+                </div>
             </motion.div>
 
             <motion.div
@@ -246,7 +238,7 @@ function Experience() {
                             </motion.div>
                         </motion.div>
                     ))}
-                        </div>
+                </div>
             </motion.div>
         </AnimatedSection>
     )

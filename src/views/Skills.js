@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { faCogs } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import AnimatedSection from '../components/AnimatedSection';
-import AnimatedText from '../components/AnimatedText';
+// import AnimatedText from '../components/AnimatedText';
 
 function Skills() {
     const skillsData = [
@@ -92,11 +92,10 @@ function Skills() {
                         animate="visible"
                         whileHover="hover"
                     >
-                        <FontAwesomeIcon icon={faCogs} />
                     </motion.span>
-                    <span>
-                        <AnimatedText text="Skills" />
-                    </span>
+                    <div className='d-flex justify-center align-center g-10'>
+                        <span><FontAwesomeIcon icon={faCogs} size={50}/></span><span><h1>Skills</h1></span>
+                    </div>
                 </motion.div>
 
                 <motion.div
