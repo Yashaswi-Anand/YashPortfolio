@@ -2491,4 +2491,38 @@
     max-width: 280px;
     height: 320px;
   }
+}/* ======
+=========================== */
+/* HOME PAGE HEIGHT CONTAINER */
+/* ================================= */
+
+.home-container {
+  height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+/* Ensure home section takes full height */
+#home {
+  height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .home-container {
+    height: 92vh;
+    padding: 20px 0;
+  }
+  
+  #home {
+    height: 92vh;
+    padding: 20px;
+  }
 }

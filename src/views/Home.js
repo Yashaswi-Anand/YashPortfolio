@@ -83,112 +83,114 @@ function Home() {
     };
 
     return (
-        <AnimatedContainer>
-            <motion.div variants={containerVariants} initial="hidden" animate="visible">
-                <motion.div
-                    className='d-flex justify-center align-center flex-direction-column w-100'
-                    variants={itemVariants}
-                >
-                    <motion.h2
-                        className='r-margin-top'
-                        initial={{ opacity: 0, y: -50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                    >
-                        <AnimatedText text="Yashaswi Anand" delay={0.5} />
-                    </motion.h2>
-
+        <div className="home-container">
+            <AnimatedContainer>
+                <motion.div variants={containerVariants} initial="hidden" animate="visible">
                     <motion.div
-                        className='d-flex w-10 0 g-40 justify-center justify-align-center'
+                        className='d-flex justify-center align-center flex-direction-column w-100'
                         variants={itemVariants}
                     >
-                        {socialIcons.map(({ Icon, url, delay }, index) => (
-                            <motion.div
-                                key={index}
-                                custom={delay}
+                        <motion.h2
+                            className='r-margin-top'
+                            initial={{ opacity: 0, y: -50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.2 }}
+                        >
+                            <AnimatedText text="Yashaswi Anand" delay={0.5} />
+                        </motion.h2>
+
+                        <motion.div
+                            className='d-flex w-10 0 g-40 justify-center justify-align-center'
+                            variants={itemVariants}
+                        >
+                            {socialIcons.map(({ Icon, url, delay }, index) => (
+                                <motion.div
+                                    key={index}
+                                    custom={delay}
+                                    variants={socialIconVariants}
+                                    whileHover="hover"
+                                    whileTap="tap"
+                                    className='social-icons'
+                                    onClick={() => window.open(url)}
+                                    style={{ cursor: 'pointer' }}
+                                >
+                                    <Icon />
+                                </motion.div>
+                            ))}
+
+                            <motion.p
+                                className='social-icons m-0 p-0'
+                                custom={0.5}
                                 variants={socialIconVariants}
                                 whileHover="hover"
                                 whileTap="tap"
-                                className='social-icons'
-                                onClick={() => window.open(url)}
+                                onClick={() => window.open('https://drive.google.com/file/d/1mh3vggLioADoscE3CBzPpIwLNxgYKU-r/view?usp=sharing')}
                                 style={{ cursor: 'pointer' }}
                             >
-                                <Icon />
-                            </motion.div>
-                        ))}
-
-                        <motion.p
-                            className='social-icons m-0 p-0'
-                            custom={0.5}
-                            variants={socialIconVariants}
-                            whileHover="hover"
-                            whileTap="tap"
-                            onClick={() => window.open('https://drive.google.com/file/d/1mh3vggLioADoscE3CBzPpIwLNxgYKU-r/view?usp=sharing')}
-                            style={{ cursor: 'pointer' }}
-                        >
-                            Resume
-                        </motion.p>
-                    </motion.div>
-                </motion.div>
-
-                <motion.div
-                    className='d-flex justify-center align-center w-100 m-t-50 flex-direction'
-                    variants={itemVariants}
-                >
-                    <motion.div
-                        className='d-flex justify-center align-center flex-direction-column w-30-100'
-                        variants={itemVariants}
-                    >
-                        <img
-                            src={logo}
-                            height={180}
-                            width={180}
-                            style={{ borderRadius: '50%' }}
-                            alt="profile_image"
-                            variants={imageVariants}
-                            whileHover={{
-                                scale: 1.1,
-                                boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
-                                transition: { duration: 0.3 }
-                            }}
-                        />
-
-                        <motion.div
-                            className='type-writer w-100 m-t-10'
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 1 }}
-                        >
-                            <Typewriter
-                                options={{
-                                    strings: ['Backend Developer', 'NodeJS Developer', 'ReactJS Developer', 'Full Stack Developer'],
-                                    autoStart: true,
-                                    loop: true,
-                                }}
-                            />
+                                Resume
+                            </motion.p>
                         </motion.div>
                     </motion.div>
 
                     <motion.div
-                        className='w-70-100'
+                        className='d-flex justify-center align-center w-100 m-t-50 flex-direction'
                         variants={itemVariants}
                     >
-                        <motion.p
-                            className='about-discription'
-                            initial={{ opacity: 0, x: 50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 1, delay: 0.8 }}
+                        <motion.div
+                            className='d-flex justify-center align-center flex-direction-column w-30-100'
+                            variants={itemVariants}
                         >
-                            The Results-driven and detail-oriented professional with proven experience in a <strong>full-stack software
-                                development</strong>, backend architecture, and web application engineering. Proficient in <i>Python,
-                                    Java, Node.js, ReactJs, PostgreSQL, and AWS</i>. Experienced in building scalable systems,
-                            optimizing performance, and managing CI/CD workflows. Seeking impactful roles to contribute technical expertise
-                            and drive innovation.
-                        </motion.p>
+                            <img
+                                src={logo}
+                                height={180}
+                                width={180}
+                                style={{ borderRadius: '50%' }}
+                                alt="profile_image"
+                                variants={imageVariants}
+                                whileHover={{
+                                    scale: 1.1,
+                                    boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
+                                    transition: { duration: 0.3 }
+                                }}
+                            />
+
+                            <motion.div
+                                className='type-writer w-100 m-t-10'
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8, delay: 1 }}
+                            >
+                                <Typewriter
+                                    options={{
+                                        strings: ['Backend Developer', 'NodeJS Developer', 'ReactJS Developer', 'Full Stack Developer'],
+                                        autoStart: true,
+                                        loop: true,
+                                    }}
+                                />
+                            </motion.div>
+                        </motion.div>
+
+                        <motion.div
+                            className='w-70-100'
+                            variants={itemVariants}
+                        >
+                            <motion.p
+                                className='about-discription'
+                                initial={{ opacity: 0, x: 50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 1, delay: 0.8 }}
+                            >
+                                The Results-driven and detail-oriented professional with proven experience in a <strong>full-stack software
+                                    development</strong>, backend architecture, and web application engineering. Proficient in <i>Python,
+                                        Java, Node.js, ReactJs, PostgreSQL, and AWS</i>. Experienced in building scalable systems,
+                                optimizing performance, and managing CI/CD workflows. Seeking impactful roles to contribute technical expertise
+                                and drive innovation.
+                            </motion.p>
+                        </motion.div>
                     </motion.div>
                 </motion.div>
-            </motion.div>
-        </AnimatedContainer>
+            </AnimatedContainer>
+        </div>
     )
 }
 
