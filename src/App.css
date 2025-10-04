@@ -525,8 +525,8 @@
     }
 
     .navbar-items a .nav-text {
-      display: none;
-      /* Hide text in mobile view */
+      display: block;
+      /* Show text in mobile view for new navbar */
     }
 
     .navbar-items a svg {
@@ -864,40 +864,45 @@
       top: auto;
       border-top: 1px solid rgba(255, 255, 255, 0.2);
       border-bottom: none;
-      background: rgba(255, 255, 255, 0.15);
-      padding: 4px 0;
+      background: rgba(15, 15, 35, 0.95);
+      padding: 8px 0;
     }
 
     .navbar-fancy.navbar-fixed {
-      background: rgba(255, 255, 255, 0.2);
-      padding: 4px 0;
+      background: rgba(15, 15, 35, 0.98);
+      padding: 8px 0;
     }
 
     .navbar-items-fancy {
       width: 100%;
       justify-content: space-around;
-      padding: 4px 8px;
-      gap: 2px;
-    }
-
-    .navbar-item-fancy a {
-      padding: 6px 8px;
-      min-width: auto;
+      padding: 8px 12px;
       gap: 4px;
     }
 
+    .navbar-item-fancy a {
+      padding: 8px 6px;
+      min-width: auto;
+      gap: 4px;
+      flex-direction: column !important;
+      text-align: center;
+      display: flex !important;
+    }
+
     .nav-icon-wrapper {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
     }
 
     .nav-icon {
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
 
     .nav-text {
-      font-size: 0.65rem;
-      margin-top: 0;
+      font-size: 0.7rem;
+      margin-top: 4px;
+      display: block !important;
+      opacity: 1 !important;
     }
 
     .navbar-fancy.navbar-hidden {
@@ -1688,4 +1693,71 @@
     li {
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
     }
+  }/* =
+================================ */
+/* MOBILE NAVBAR VERTICAL LAYOUT FIX */
+/* ================================= */
+
+@media only screen and (max-width: 740px) {
+  /* Ensure vertical layout for mobile navbar */
+  .navbar-item-fancy a {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    display: flex !important;
   }
+
+  /* Make sure text is visible */
+  .navbar-item-fancy .nav-text {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin-top: 4px !important;
+    font-size: 0.7rem !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* Icon wrapper adjustments */
+  .navbar-item-fancy .nav-icon-wrapper {
+    margin-bottom: 0 !important;
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  /* Icon size */
+  .navbar-item-fancy .nav-icon {
+    font-size: 1rem !important;
+  }
+
+  /* Active state text */
+  .navbar-item-fancy.active .nav-text {
+    color: #4ecdc4 !important;
+    font-weight: 700 !important;
+  }
+
+  /* Hover state text */
+  .navbar-item-fancy:hover .nav-text {
+    color: #4ecdc4 !important;
+  }
+
+  /* Navbar container adjustments */
+  .navbar-items-fancy {
+    padding: 8px 12px !important;
+    gap: 4px !important;
+  }
+
+  /* Individual nav items */
+  .navbar-item-fancy {
+    flex: 1 !important;
+    max-width: none !important;
+  }
+
+  /* Navbar background */
+  .navbar-fancy {
+    background: rgba(15, 15, 35, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+}
