@@ -54,73 +54,76 @@ function Contact() {
   };
 
   return (
-    <AnimatedSection className="section-screen">
-      <motion.div
-        className="d-flex justify-center align-center g-10"
-        style={{ marginBottom: "2rem" }}
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-        <motion.span
-          initial={{ scale: 0, rotate: -180 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, type: "spring", stiffness: 200 }}
-          whileHover={{ scale: 1.2, rotate: 360, transition: { duration: 0.6 } }}
+    <div>
+      <AnimatedSection className="section-screen">
+        <motion.div
+          className="d-flex justify-center align-center g-10"
+          style={{ marginBottom: "2rem" }}
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <FontAwesomeIcon icon={faAddressCard} size="lg" />
-        </motion.span>
-        <AnimatedText text="Contact" />
-      </motion.div>
-
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="contact-grid"
-      >
-        {contactItems.map((item, index) => (
-          <motion.div
-            key={index}
-            variants={itemVariants}
-            whileHover={{
-              scale: 1.05,
-              y: -10,
-              transition: { duration: 0.3 }
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="contact-card"
+          <motion.span
+            initial={{ scale: 0, rotate: -180 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, type: "spring", stiffness: 200 }}
+            whileHover={{ scale: 1.2, rotate: 360, transition: { duration: 0.6 } }}
           >
+            <FontAwesomeIcon icon={faAddressCard} size="lg" />
+          </motion.span>
+          <AnimatedText text="Contact" />
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="contact-grid"
+        >
+          {contactItems.map((item, index) => (
             <motion.div
-              className="contact-icon"
-              style={{ color: item.color }}
+              key={index}
+              variants={itemVariants}
               whileHover={{
-                scale: 1.2,
-                rotate: 10,
+                scale: 1.05,
+                y: -10,
                 transition: { duration: 0.3 }
               }}
+              whileTap={{ scale: 0.95 }}
+              className="contact-card"
             >
-              <FontAwesomeIcon icon={item.icon} />
-            </motion.div>
-            <div className="contact-info">
-              <h3>{item.label}</h3>
-              <motion.a
-                href={item.href}
-                target={item.label === "Address" ? "_blank" : undefined}
-                rel={item.label === "Address" ? "noreferrer" : undefined}
+              <motion.div
+                className="contact-icon"
+                style={{ color: item.color }}
                 whileHover={{
-                  color: item.color,
+                  scale: 1.2,
+                  rotate: 10,
                   transition: { duration: 0.3 }
                 }}
-                className="contact-link"
               >
-                {item.value}
-              </motion.a>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
-    </AnimatedSection>
+                <FontAwesomeIcon icon={item.icon} />
+              </motion.div>
+              <div className="contact-info">
+                <h3>{item.label}</h3>
+                <motion.a
+                  href={item.href}
+                  target={item.label === "Address" ? "_blank" : undefined}
+                  rel={item.label === "Address" ? "noreferrer" : undefined}
+                  whileHover={{
+                    color: item.color,
+                    transition: { duration: 0.3 }
+                  }}
+                  className="contact-link"
+                >
+                  {item.value}
+                </motion.a>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </AnimatedSection>
+      <div style={{marginBottom: 100}}></div>
+    </div>
   )
 }
 
