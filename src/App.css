@@ -2449,80 +2449,85 @@
     .nav-icon {
       font-size: 0.8rem !important;
     }
-  }/* ======
+  }
+
+  /* ======
 =========================== */
-/* PROJECT CARDS RESPONSIVE LAYOUT */
-/* ================================= */
+  /* PROJECT CARDS RESPONSIVE LAYOUT */
+  /* ================================= */
 
-@media (max-width: 1024px) {
-  .card-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    padding: 15px;
-  }
-  
-  .card {
-    max-width: 320px;
-    height: 380px;
-  }
-}
+  @media (max-width: 1024px) {
+    .card-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      padding: 15px;
+    }
 
-@media (max-width: 768px) {
-  .card-container {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-    padding: 10px !important;
+    .card {
+      max-width: 320px;
+      height: 380px;
+    }
   }
-  
-  .card {
-    max-width: 300px;
-    height: 350px;
-    margin: 0 auto;
-  }
-}
 
-@media (max-width: 480px) {
-  .card-container {
-    padding: 5px !important;
-    gap: 15px !important;
+  @media (max-width: 768px) {
+    .card-container {
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+      padding: 10px !important;
+    }
+
+    .card {
+      max-width: 300px;
+      height: 350px;
+      margin: 0 auto;
+    }
   }
-  
-  .card {
-    max-width: 280px;
-    height: 320px;
+
+  @media (max-width: 480px) {
+    .card-container {
+      padding: 5px !important;
+      gap: 15px !important;
+    }
+
+    .card {
+      max-width: 280px;
+      height: 320px;
+    }
   }
-}/* ======
+
+  /* ======
 =========================== */
-/* HOME PAGE HEIGHT CONTAINER */
-/* ================================= */
+  /* HOME PAGE HEIGHT CONTAINER */
+  /* ================================= */
 
-.home-container {
-  height: 92vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  position: relative;
-}
-
-/* Ensure home section takes full height */
-#home {
-  height: 92vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 20px;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
   .home-container {
     height: 92vh;
-    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
   }
-  
+
+  /* Ensure home section takes full height */
   #home {
     height: 92vh;
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
   }
-}
+
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .home-container {
+      height: 92vh;
+      padding: 20px 0;
+    }
+
+    #home {
+      height: 92vh;
+      padding: 20px;
+    }
+  }
+  }
