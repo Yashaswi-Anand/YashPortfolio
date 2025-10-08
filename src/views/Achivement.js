@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrophy } from '@fortawesome/free-solid-svg-icons'
+import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const Introduction_Algorithms_And_Analysis = require('../assets/achivement/Introduction_Algorithms_And_Analysis.jpg');
@@ -28,6 +29,42 @@ const CardView = ({ item }) => {
 };
 
 function Achivement() {
+  const carouselRef = useRef(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [itemWidth, setItemWidth] = useState(0);
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      // Calculate item width dynamically or set a fixed value
+      // For simplicity, let's assume all items have the same width as the first child
+      if (carouselRef.current.children.length > 0) {
+        setItemWidth(carouselRef.current.children[0].offsetWidth + 16); // 16px for gap
+      }
+
+      const scrollInterval = setInterval(() => {
+        setScrollPosition((prevPos) => {
+          const newPos = prevPos + itemWidth;
+          if (newPos >= carouselRef.current.scrollWidth - carouselRef.current.clientWidth) {
+            // Reset to start or loop smoothly
+            return 0;
+          }
+          return newPos;
+        });
+      }, 3000); // Scroll every 3 seconds
+
+      return () => clearInterval(scrollInterval);
+    }
+  }, [itemWidth]);
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth',
+      });
+    }
+  }, [scrollPosition]);
+
   const achievements_date = [
     { title: "Gate Score", date: "2025", logo: gate_score },
     { title: "Excellence in NodeJs", date: "2022", logo: nodejs_cerificate },
@@ -45,7 +82,7 @@ function Achivement() {
         <FontAwesomeIcon icon={faTrophy} style={{ fontSize: '2.8rem', marginRight: "0.5rem" }} />
         <h1>Achievements</h1>
       </div>
-      <CarouselWrapper>
+      <CarouselWrapper ref={carouselRef}>
         {achievements_date.map((item, index) => (
           <CardView item={item} key={index} />
         ))}
@@ -113,12 +150,14 @@ const StyledWrapper = styled.div`
 const CarouselWrapper = styled.div`
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow-x: hidden; /* Hide scrollbar and prevent manual scrolling */
   gap: 1rem;
   padding: 1rem;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
   box-sizing: border-box;
+
+  /* Remove scroll-snap-type and scroll-behavior as they might conflict with programmatic scrolling */
+  /* scroll-snap-type: x mandatory; */
+  /* scroll-behavior: smooth; */
 
   &::-webkit-scrollbar {
     display: none;
@@ -134,6 +173,3 @@ const CarouselWrapper = styled.div`
     gap: 1.25rem;
   }
 `;
-
-
-
