@@ -9,7 +9,6 @@ import Project from './Project';
 import Contact from './Contact';
 import Pattern from '../components/Pattern';
 import Achivement from './Achivement';
-import FloatingParticles from '../components/FloatingParticles';
 import AnimatedSection from '../components/AnimatedSection';
 
 function Dashboard() {
@@ -28,7 +27,6 @@ function Dashboard() {
   return (
     <Pattern component={
       <div>
-        <FloatingParticles />
         <NavBar />
         <motion.div 
           className="content"

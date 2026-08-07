@@ -7,12 +7,11 @@ const Cards = ({ data }) => {
         <div className="content">
           <div className="back">
             <div className="back-content">
-              <div style={{ padding: 10 }}>
+              <div style={{ padding: 10, width: '100%', height: '100%' }}>
                 <img
                   src={data.image}
                   alt="Card"
-                  width={'100%'} height={305}
-                  style={{ objectFit: 'fill' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 5 }}
                 />
               </div>
             </div>
@@ -28,14 +27,14 @@ const Cards = ({ data }) => {
             </div>
             <div className="front-content">
               <div>
-                <small className="badge" style={{ color: 'lightblue', fontWeight: 'bold' }}>{data.project_name}</small>
+                <small className="badge" style={{ color: '#4ecdc4', fontWeight: 'bold' }}>{data.project_name}</small>
                 <div className='m-t-10 content-text'>{data.content}</div>
-                <p className='m-t-10' style={{ fontSize: 16, marginLeft: 10, fontWeight: 'bold', color: 'lightblue' }}>Technologies Used:</p>
+                <p className='m-t-10' style={{ fontSize: 16, marginLeft: 10, fontWeight: 'bold', color: '#4ecdc4' }}>Technologies Used:</p>
                 <div className='m-t-10 content-text'>{data.technologies}</div>
               </div>
               <div className="description">
                 <div className="title">
-                  <svg className='badge' fillRule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style={{ mixBlendMode: 'normal' }} textAnchor="none" fontSize="none" fontWeight="none" fontFamily="none" strokeDashoffset={0} strokeDasharray strokeMiterlimit={10} strokeLinejoin="miter" strokeLinecap="butt" strokeWidth={1} stroke="none" fillRule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z" /></g></g></svg>
+                  <svg className='badge' fillRule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style={{ mixBlendMode: 'normal' }} textAnchor="none" fontSize="none" fontWeight="none" fontFamily="none" strokeDashoffset={0} strokeMiterlimit={10} strokeLinejoin="miter" strokeLinecap="butt" strokeWidth={1} stroke="none" fillRule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z" /></g></g></svg>
                   <div>
                     {data.github && (
                       <a href={data.github} target="_blank" rel="noopener noreferrer" className="badge project-link">
@@ -60,17 +59,13 @@ const Cards = ({ data }) => {
 }
 
 const StyledWrapper = styled.div`
+  width: 100%;
+  max-width: 420px;
+
   .card {
     overflow: visible;
-    width: 420px;
+    width: 100%;
     height: 320px;
-  }
-
-  @media (max-width: 500px) {
-    .card {
-      width: 350px;
-      height: 320px;
-    }
   }
 
   .content {
@@ -78,24 +73,25 @@ const StyledWrapper = styled.div`
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 300ms;
-    box-shadow: 0px 0px 10px 1px #000000ee;
-    border-radius: 5px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    border-radius: 12px;
   }
 
   .content-text {
-    padding: 5px 40px 5px 10px;
-    text-align: justify;
+    padding: 5px 12px 5px 10px;
+    text-align: left;
     font-size: 14px;
   }
 
   .front, .back {
-    background-color: #151515;
+    background-color: #0f172a;
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    border-radius: 5px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     overflow: hidden;
   }
 
@@ -114,7 +110,7 @@ const StyledWrapper = styled.div`
     display: block;
     width: 160px;
     height: 160%;
-    background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
+    background: linear-gradient(90deg, transparent, #4ecdc4, #38bdf8, transparent);
     animation: rotation_481 5000ms infinite linear;
   }
 
@@ -122,8 +118,8 @@ const StyledWrapper = styled.div`
     position: absolute;
     width: 99%;
     height: 99%;
-    background-color: #151515;
-    border-radius: 5px;
+    background-color: #0f172a;
+    border-radius: 12px;
     color: white;
     display: flex;
     flex-direction: column;
@@ -159,6 +155,7 @@ const StyledWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: auto;
   }
 
   .front-content .badge {
@@ -216,14 +213,14 @@ const StyledWrapper = styled.div`
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background-color: #ffbb66;
+    background-color: rgba(78, 205, 196, 0.35);
     position: relative;
-    filter: blur(15px);
+    filter: blur(18px);
     animation: floating 2600ms infinite linear;
   }
 
   #bottom {
-    background-color: #ff8866;
+    background-color: rgba(56, 189, 248, 0.28);
     left: 50px;
     top: 0px;
     width: 150px;
@@ -232,7 +229,7 @@ const StyledWrapper = styled.div`
   }
 
   #right {
-    background-color: #ff2233;
+    background-color: rgba(37, 99, 235, 0.3);
     left: 160px;
     top: -80px;
     width: 30px;

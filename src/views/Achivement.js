@@ -79,7 +79,7 @@ function Achivement() {
   return (
     <div className="section-screen">
       <div className="d-flex justify-center align-center g-10" style={{ marginBottom: "1rem" }}>
-        <FontAwesomeIcon icon={faTrophy} style={{ fontSize: '2.8rem', marginRight: "0.5rem" }} />
+        <FontAwesomeIcon icon={faTrophy} style={{ fontSize: '1.9rem', color: '#4ecdc4', marginRight: "0.5rem" }} />
         <h1>Achievements</h1>
       </div>
       <CarouselWrapper ref={carouselRef}>
@@ -96,7 +96,7 @@ export default Achivement;
 const StyledWrapper = styled.div`
   flex: 0 0 auto;
   scroll-snap-align: start;
-  width: 75vw; /* responsive width */
+  width: 100%; /* full width when stacked on mobile */
 
   @media (min-width: 768px) {
     width: 300px; /* fixed width on tablet/desktop */
@@ -122,7 +122,7 @@ const StyledWrapper = styled.div`
     width: 100%;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    background-color: #444;
+    background-color: rgba(255, 255, 255, 0.06);
     border-radius: 10px;
   }
 
@@ -171,5 +171,7 @@ const CarouselWrapper = styled.div`
     overflow-y: auto;
     scroll-snap-type: none;
     gap: 1.25rem;
+    max-height: 75vh;
+    -webkit-overflow-scrolling: touch;
   }
 `;

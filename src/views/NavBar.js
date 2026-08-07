@@ -67,7 +67,6 @@ const NavBar = () => {
 
     return (
         <nav className={`navbar-fancy ${isFixed ? 'navbar-fixed' : ''} ${isVisible ? 'navbar-visible' : 'navbar-hidden'}`}>
-            <div className="navbar-glow"></div>
             <div className="navbar-container">
                 <ul className="navbar-items-fancy">
                     {navItems.map((item, index) => (

@@ -100,7 +100,7 @@ function Home() {
                         </motion.h2>
 
                         <motion.div
-                            className='d-flex w-10 0 g-40 justify-center justify-align-center'
+                            className='d-flex w-100 g-40 justify-center align-center'
                             variants={itemVariants}
                         >
                             {socialIcons.map(({ Icon, url, delay }, index) => (
@@ -140,7 +140,7 @@ function Home() {
                             className='d-flex justify-center align-center flex-direction-column w-30-100'
                             variants={itemVariants}
                         >
-                            <img
+                            <motion.img
                                 src={logo}
                                 height={180}
                                 width={180}

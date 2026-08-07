@@ -2,17 +2,25 @@ import { faBriefcase, faCalendarAlt, faMapMarkerAlt, faCode, faDatabase, faCloud
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
-// import AnimatedText from '../components/AnimatedText';
 
 function Experience() {
     const experienceData = [
         {
             company: "Upjao Agrotech Private Limited",
-            position: "Full Stack Developer",
-            duration: "Apr 2023 - Present",
+            position: "Senior Full Stack Developer",
+            duration: "Apr 2026 - Present",
             location: "Ahemdabad",
             logo: "https://upjao.ai/wp-content/uploads/2023/10/Upjao-Logo-1.png",
-            description: "Leading full-stack development initiatives in agricultural technology, focusing on scalable web applications and data optimization.",
+            description: "Promoted to Senior Full Stack Developer. Leading full-stack development initiatives in agricultural technology with broader ownership of system architecture, code reviews, and mentoring.",
+            achievements: []
+        },
+        {
+            company: "Upjao Agrotech Private Limited",
+            position: "Full Stack Developer",
+            duration: "Apr 2023 - Mar 2026",
+            location: "Ahemdabad",
+            logo: "https://upjao.ai/wp-content/uploads/2023/10/Upjao-Logo-1.png",
+            description: "Led full-stack development initiatives in agricultural technology, focusing on scalable web applications and data optimization.",
             achievements: [
                 {
                     icon: faCode,
@@ -45,7 +53,7 @@ function Experience() {
             position: "Intern - Software Developer",
             duration: "Jan 2023 - Mar 2023",
             location: "Remote",
-            logo: "https://via.placeholder.com/120x120/2c3e50/ffffff?text=TC",
+            logo: null,
             description: "Designed and developed a web application using React.js for the frontend and built REST APIs with Node.js and Hapi.js for efficient backend operations. Structured project hierarchy and implemented test run features to assist the testing team in evaluating project functionalities effectively.",
             achievements: []
         }
@@ -56,20 +64,19 @@ function Experience() {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.3,
+                staggerChildren: 0.15,
+                delayChildren: 0.2,
             },
         },
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, x: -50, scale: 0.9 },
+        hidden: { opacity: 0, y: 30 },
         visible: {
             opacity: 1,
-            x: 0,
-            scale: 1,
+            y: 0,
             transition: {
-                duration: 0.8,
+                duration: 0.6,
                 ease: [0.25, 0.25, 0.25, 0.75],
             },
         },
@@ -84,7 +91,7 @@ function Experience() {
                 transition={{ duration: 0.8, delay: 0.2 }}
             >
                 <div className='d-flex justify-center align-center g-10'>
-                    <span><FontAwesomeIcon icon={faBriefcase} style={{ fontSize: '2.8rem' }} /></span><span><h1>Experience</h1></span>
+                    <span><FontAwesomeIcon icon={faBriefcase} style={{ fontSize: '1.9rem', color: '#4ecdc4' }} /></span><span><h1>Experience</h1></span>
                 </div>
             </motion.div>
 
@@ -94,7 +101,6 @@ function Experience() {
                 initial="hidden"
                 animate="visible"
             >
-                {/* Experience Timeline */}
                 <div className="main-timeline">
                     <div className="main-timeline-line"></div>
 
@@ -103,138 +109,83 @@ function Experience() {
                             key={expIndex}
                             className="experience-block"
                             variants={itemVariants}
-                            custom={expIndex}
                         >
-                            {/* Company Header Card */}
-                            <motion.div
-                                className="experience-company-card"
-                                whileHover={{ y: -5, transition: { duration: 0.3 } }}
-                            >
-                                <div className="experience-timeline-marker">
-                                    <motion.div
-                                        className="main-marker-icon"
-                                        whileHover={{
-                                            scale: 1.2,
-                                            rotate: 360,
-                                            transition: { duration: 0.6 }
-                                        }}
-                                    >
-                                        <FontAwesomeIcon icon={faBriefcase} />
-                                    </motion.div>
+                            <div className="experience-timeline-marker">
+                                <div className="main-marker-icon">
+                                    <FontAwesomeIcon icon={faBriefcase} />
                                 </div>
+                            </div>
 
-                                <div className="company-card-content">
-                                    <motion.div
-                                        className="company-logo-wrapper"
-                                        whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
-                                    >
-                                        <img
-                                            src={experience.logo}
-                                            alt={`${experience.company} logo`}
-                                            className="company-logo"
-                                        />
-                                        <div className="logo-glow"></div>
-                                    </motion.div>
-
-                                    <div className="company-details">
-                                        <motion.h2
-                                            className="company-name"
-                                            initial={{ opacity: 0, x: -20 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            transition={{ duration: 0.6, delay: 0.8 + (expIndex * 0.2) }}
-                                        >
-                                            {experience.company}
-                                        </motion.h2>
-
-                                        <motion.h3
-                                            className="position-title"
-                                            initial={{ opacity: 0, x: -20 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            transition={{ duration: 0.6, delay: 1 + (expIndex * 0.2) }}
-                                        >
-                                            {experience.position}
-                                        </motion.h3>
-
-                                        <div className="experience-meta">
-                                            <motion.div
-                                                className="meta-item"
-                                                initial={{ opacity: 0, y: 10 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                transition={{ duration: 0.6, delay: 1.2 + (expIndex * 0.2) }}
-                                            >
-                                                <FontAwesomeIcon icon={faCalendarAlt} />
-                                                <span>{experience.duration}</span>
-                                            </motion.div>
-
-                                            <motion.div
-                                                className="meta-item"
-                                                initial={{ opacity: 0, y: 10 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                transition={{ duration: 0.6, delay: 1.4 + (expIndex * 0.2) }}
-                                            >
-                                                <FontAwesomeIcon icon={faMapMarkerAlt} />
-                                                <span>{experience.location}</span>
-                                            </motion.div>
+                            <motion.div
+                                className="exp-card"
+                                whileHover={{ y: -4, transition: { duration: 0.3 } }}
+                            >
+                                <div className="exp-card-header">
+                                    {experience.logo ? (
+                                        <div className="exp-logo-box">
+                                            <img
+                                                src={experience.logo}
+                                                alt={`${experience.company} logo`}
+                                                className="exp-logo"
+                                            />
                                         </div>
+                                    ) : (
+                                        <div className="exp-logo-box exp-logo-fallback">
+                                            {experience.company.charAt(0)}
+                                        </div>
+                                    )}
 
-                                        <motion.p
-                                            className="company-description"
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.6, delay: 1.6 + (expIndex * 0.2) }}
-                                        >
-                                            {experience.description}
-                                        </motion.p>
+                                    <div className="exp-title-block">
+                                        <h2 className="company-name">{experience.company}</h2>
+                                        <h3 className="position-title">{experience.position}</h3>
+                                    </div>
 
-                                        {/* Achievements List */}
-                                        {experience.achievements.length > 0 && (
-                                            <motion.div
-                                                className="achievements-list"
-                                                initial={{ opacity: 0, y: 20 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                transition={{ duration: 0.6, delay: 1.8 + (expIndex * 0.2) }}
-                                            >
-                                                <h4 className="achievements-title">Key Achievements:</h4>
-                                                <ul className="achievements-bullets">
-                                                    {experience.achievements.map((achievement, index) => (
-                                                        <motion.li
-                                                            key={index}
-                                                            className="achievement-bullet"
-                                                            initial={{ opacity: 0, x: -20 }}
-                                                            animate={{ opacity: 1, x: 0 }}
-                                                            transition={{
-                                                                duration: 0.5,
-                                                                delay: 2 + (expIndex * 0.3) + (index * 0.1)
-                                                            }}
-                                                            whileHover={{
-                                                                x: 5,
-                                                                transition: { duration: 0.2 }
-                                                            }}
-                                                        >
-                                                            <div className="bullet-content">
-                                                                <div className="bullet-header">
-                                                                    <FontAwesomeIcon
-                                                                        icon={achievement.icon}
-                                                                        className="bullet-icon"
-                                                                    />
-                                                                    <span className="bullet-title">{achievement.title}</span>
-                                                                </div>
-                                                                <p className="bullet-description">{achievement.description}</p>
-                                                                <div className="bullet-technologies">
-                                                                    {achievement.technologies.map((tech, techIndex) => (
-                                                                        <span key={techIndex} className="bullet-tech-tag">
-                                                                            {tech}
-                                                                        </span>
-                                                                    ))}
-                                                                </div>
-                                                            </div>
-                                                        </motion.li>
-                                                    ))}
-                                                </ul>
-                                            </motion.div>
-                                        )}
+                                    <div className="exp-meta-chips">
+                                        <span className="exp-chip">
+                                            <FontAwesomeIcon icon={faCalendarAlt} />
+                                            {experience.duration}
+                                        </span>
+                                        <span className="exp-chip">
+                                            <FontAwesomeIcon icon={faMapMarkerAlt} />
+                                            {experience.location}
+                                        </span>
                                     </div>
                                 </div>
+
+                                <p className="company-description">{experience.description}</p>
+
+                                {experience.achievements.length > 0 && (
+                                    <div className="exp-achievements">
+                                        <h4 className="achievements-title">Key Achievements</h4>
+                                        <div className="exp-achievements-grid">
+                                            {experience.achievements.map((achievement, index) => (
+                                                <motion.div
+                                                    key={index}
+                                                    className="exp-achievement-card"
+                                                    initial={{ opacity: 0, y: 20 }}
+                                                    whileInView={{ opacity: 1, y: 0 }}
+                                                    viewport={{ once: true }}
+                                                    transition={{ duration: 0.5, delay: index * 0.08 }}
+                                                >
+                                                    <div className="exp-achievement-head">
+                                                        <span className="exp-achievement-icon">
+                                                            <FontAwesomeIcon icon={achievement.icon} />
+                                                        </span>
+                                                        <span className="bullet-title">{achievement.title}</span>
+                                                    </div>
+                                                    <p className="bullet-description">{achievement.description}</p>
+                                                    <div className="bullet-technologies">
+                                                        {achievement.technologies.map((tech, techIndex) => (
+                                                            <span key={techIndex} className="bullet-tech-tag">
+                                                                {tech}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+                                                </motion.div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                )}
                             </motion.div>
                         </motion.div>
                     ))}
