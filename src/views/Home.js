@@ -39,13 +39,12 @@ function Home() {
     };
 
     const imageVariants = {
-        hidden: { opacity: 0, scale: 0.5, rotate: -180 },
+        hidden: { opacity: 0, scale: 0.85 },
         visible: {
             opacity: 1,
             scale: 1,
-            rotate: 0,
             transition: {
-                duration: 1.2,
+                duration: 0.8,
                 ease: [0.25, 0.25, 0.25, 0.75],
                 delay: 0.3,
             },

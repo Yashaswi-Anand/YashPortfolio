@@ -27,21 +27,21 @@ function Contact() {
       label: "Contact",
       value: "+91 9471487515",
       href: "tel:+919471487515",
-      color: "#4ecdc4"
+      color: "#0d9488"
     },
     {
       icon: faEnvelope,
       label: "Email",
       value: "anandyash1711@gmail.com",
       href: "mailto:anandyash1711@gmail.com",
-      color: "#4ecdc4"
+      color: "#0d9488"
     },
     {
       icon: faMapMarkerAlt,
       label: "Address",
       value: "Vatva, Ahmedabad, Gujarat, India",
       href: "https://www.google.com/maps?q=Vatva,+Ahmedabad,+Gujarat,+India",
-      color: "#4ecdc4"
+      color: "#0d9488"
     }
   ];
 
@@ -87,7 +87,7 @@ function Contact() {
           >
           </motion.span>
           <div className='d-flex justify-center align-center g-10'>
-            <span><FontAwesomeIcon icon={faAddressCard} style={{ fontSize: '1.9rem', color: '#4ecdc4' }} /></span><span><h1>Contact</h1></span>
+            <span><FontAwesomeIcon icon={faAddressCard} style={{ fontSize: '1.9rem', color: '#0d9488' }} /></span><span><h1>Contact</h1></span>
           </div>
         </motion.div>
 

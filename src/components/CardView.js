@@ -26,9 +26,9 @@ const StyledWrapper = styled.div`
   .card {
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.05);
+    background: #ffffff;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(15, 23, 42, 0.08);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -38,7 +38,7 @@ const StyledWrapper = styled.div`
     flex-direction: row;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -52,7 +52,7 @@ const StyledWrapper = styled.div`
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(15, 23, 42, 0.04), transparent);
     transition: left 0.8s ease;
   }
 
@@ -63,9 +63,9 @@ const StyledWrapper = styled.div`
   .card:hover {
     cursor: pointer;
     transform: translateY(-5px) scale(1.02);
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(78, 205, 196, 0.3);
-    box-shadow: 0 15px 40px rgba(78, 205, 196, 0.1);
+    background: #f8fafc;
+    border-color: rgba(13, 148, 136, 0.3);
+    box-shadow: 0 15px 40px rgba(13, 148, 136, 0.1);
   }
 
   .img {
@@ -73,9 +73,9 @@ const StyledWrapper = styled.div`
     height: 180px;
     margin-left: 20px;
     border-radius: 15px;
-    background: rgba(255, 255, 255, 0.1);
+    background: #f1f5f9;
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(15, 23, 42, 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,8 +99,8 @@ const StyledWrapper = styled.div`
   }
 
   .card:hover > .img {
-    background: rgba(78, 205, 196, 0.1);
-    border-color: rgba(78, 205, 196, 0.3);
+    background: rgba(13, 148, 136, 0.1);
+    border-color: rgba(13, 148, 136, 0.3);
     transform: scale(1.05);
   }
 
@@ -112,7 +112,7 @@ const StyledWrapper = styled.div`
   .textBox {
     width: calc(100% - 90px);
     margin-left: 20px;
-    color: white !important;
+    color: #334155 !important;
     font-family: 'Poppins', sans-serif;
     position: relative;
     z-index: 2;
@@ -141,26 +141,26 @@ const StyledWrapper = styled.div`
   .p {
     font-size: 14px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.9) !important;
+    color: #475569 !important;
     white-space: normal;
     overflow-wrap: break-word;
     padding: 2px 10px;
     margin: 5px 0;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    
     line-height: 1.4;
   }
 
   .p:first-child {
     font-size: 18px;
     font-weight: 600;
-    color: #4ecdc4 !important;
+    color: #0d9488 !important;
     margin-bottom: 8px;
   }
 
   .p:nth-child(2) {
     font-size: 16px;
     font-weight: 500;
-    color: #ffffff !important;
+    color: #0f172a !important;
     margin-bottom: 6px;
   }`;
 

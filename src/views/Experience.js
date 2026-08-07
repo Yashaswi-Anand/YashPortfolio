@@ -1,7 +1,27 @@
+import { useState } from 'react';
 import { faBriefcase, faCalendarAlt, faMapMarkerAlt, faCode, faDatabase, faCloud, faCogs } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion';
-import AnimatedSection from '../components/AnimatedSection';
+
+// Company logo with a graceful initial-letter fallback if the image fails to load
+const ExpLogo = ({ logo, company }) => {
+    const [failed, setFailed] = useState(false);
+
+    if (!logo || failed) {
+        return <div className="exp-logo-box exp-logo-fallback">{company.charAt(0)}</div>;
+    }
+
+    return (
+        <div className="exp-logo-box">
+            <img
+                src={logo}
+                alt={`${company} logo`}
+                className="exp-logo"
+                onError={() => setFailed(true)}
+            />
+        </div>
+    );
+};
 
 function Experience() {
     const experienceData = [
@@ -83,7 +103,7 @@ function Experience() {
     };
 
     return (
-        <AnimatedSection className='section-screen'>
+        <div className='section-screen'>
             <motion.div
                 className='d-flex justify-center align-center g-10'
                 initial={{ opacity: 0, y: -30 }}
@@ -91,7 +111,7 @@ function Experience() {
                 transition={{ duration: 0.8, delay: 0.2 }}
             >
                 <div className='d-flex justify-center align-center g-10'>
-                    <span><FontAwesomeIcon icon={faBriefcase} style={{ fontSize: '1.9rem', color: '#4ecdc4' }} /></span><span><h1>Experience</h1></span>
+                    <span><FontAwesomeIcon icon={faBriefcase} style={{ fontSize: '1.9rem', color: '#0d9488' }} /></span><span><h1>Experience</h1></span>
                 </div>
             </motion.div>
 
@@ -121,19 +141,7 @@ function Experience() {
                                 whileHover={{ y: -4, transition: { duration: 0.3 } }}
                             >
                                 <div className="exp-card-header">
-                                    {experience.logo ? (
-                                        <div className="exp-logo-box">
-                                            <img
-                                                src={experience.logo}
-                                                alt={`${experience.company} logo`}
-                                                className="exp-logo"
-                                            />
-                                        </div>
-                                    ) : (
-                                        <div className="exp-logo-box exp-logo-fallback">
-                                            {experience.company.charAt(0)}
-                                        </div>
-                                    )}
+                                    <ExpLogo logo={experience.logo} company={experience.company} />
 
                                     <div className="exp-title-block">
                                         <h2 className="company-name">{experience.company}</h2>
@@ -191,7 +199,7 @@ function Experience() {
                     ))}
                 </div>
             </motion.div>
-        </AnimatedSection>
+        </div>
     )
 }
 

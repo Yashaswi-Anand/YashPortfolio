@@ -27,9 +27,9 @@ const Cards = ({ data }) => {
             </div>
             <div className="front-content">
               <div>
-                <small className="badge" style={{ color: '#4ecdc4', fontWeight: 'bold' }}>{data.project_name}</small>
+                <small className="badge" style={{ color: '#0d9488', fontWeight: 'bold' }}>{data.project_name}</small>
                 <div className='m-t-10 content-text'>{data.content}</div>
-                <p className='m-t-10' style={{ fontSize: 16, marginLeft: 10, fontWeight: 'bold', color: '#4ecdc4' }}>Technologies Used:</p>
+                <p className='m-t-10' style={{ fontSize: 16, marginLeft: 10, fontWeight: 'bold', color: '#0d9488' }}>Technologies Used:</p>
                 <div className='m-t-10 content-text'>{data.technologies}</div>
               </div>
               <div className="description">
@@ -73,7 +73,7 @@ const StyledWrapper = styled.div`
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 300ms;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
     border-radius: 12px;
   }
 
@@ -84,14 +84,14 @@ const StyledWrapper = styled.div`
   }
 
   .front, .back {
-    background-color: #0f172a;
+    background-color: #ffffff;
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(15, 23, 42, 0.1);
     overflow: hidden;
   }
 
@@ -110,7 +110,7 @@ const StyledWrapper = styled.div`
     display: block;
     width: 160px;
     height: 160%;
-    background: linear-gradient(90deg, transparent, #4ecdc4, #38bdf8, transparent);
+    background: linear-gradient(90deg, transparent, #0d9488, #0ea5e9, transparent);
     animation: rotation_481 5000ms infinite linear;
   }
 
@@ -118,9 +118,9 @@ const StyledWrapper = styled.div`
     position: absolute;
     width: 99%;
     height: 99%;
-    background-color: #0f172a;
+    background-color: #ffffff;
     border-radius: 12px;
-    color: white;
+    color: #0f172a;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -144,7 +144,7 @@ const StyledWrapper = styled.div`
 
   .front {
     transform: rotateY(180deg);
-    color: white;
+    color: #0f172a;
   }
 
   .front .front-content {
@@ -159,7 +159,7 @@ const StyledWrapper = styled.div`
   }
 
   .front-content .badge {
-    background-color: #00000055;
+    background-color: rgba(13, 148, 136, 0.1);
     padding: 2px 10px;
     border-radius: 10px;
     backdrop-filter: blur(2px);
@@ -170,10 +170,10 @@ const StyledWrapper = styled.div`
   }
 
   .description {
-    box-shadow: 0px 0px 10px 5px #00000088;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.12);
     width: 100%;
     padding: 10px;
-    background-color: #00000099;
+    background-color: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(5px);
     border-radius: 5px;
   }
@@ -191,13 +191,13 @@ const StyledWrapper = styled.div`
   }
 
   .project-link {
-    color: #ffffff88;
+    color: #475569;
     font-size: 14px;
     cursor: pointer;
   }
   
   .project-link:hover {
-    color: #ffffff;
+    color: #0d9488;
     text-decoration: underline;
   }
 
@@ -213,7 +213,7 @@ const StyledWrapper = styled.div`
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background-color: rgba(78, 205, 196, 0.35);
+    background-color: rgba(13, 148, 136, 0.35);
     position: relative;
     filter: blur(18px);
     animation: floating 2600ms infinite linear;

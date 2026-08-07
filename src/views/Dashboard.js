@@ -10,6 +10,7 @@ import Contact from './Contact';
 import Pattern from '../components/Pattern';
 import Achivement from './Achivement';
 import AnimatedSection from '../components/AnimatedSection';
+import FloatingShapes from '../components/FloatingShapes';
 
 function Dashboard() {
   const sectionVariants = {
@@ -27,6 +28,7 @@ function Dashboard() {
   return (
     <Pattern component={
       <div>
+        <FloatingShapes />
         <NavBar />
         <motion.div 
           className="content"

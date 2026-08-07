@@ -79,7 +79,7 @@ function Achivement() {
   return (
     <div className="section-screen">
       <div className="d-flex justify-center align-center g-10" style={{ marginBottom: "1rem" }}>
-        <FontAwesomeIcon icon={faTrophy} style={{ fontSize: '1.9rem', color: '#4ecdc4', marginRight: "0.5rem" }} />
+        <FontAwesomeIcon icon={faTrophy} style={{ fontSize: '1.9rem', color: '#0d9488', marginRight: "0.5rem" }} />
         <h1>Achievements</h1>
       </div>
       <CarouselWrapper ref={carouselRef}>
@@ -106,7 +106,9 @@ const StyledWrapper = styled.div`
     // background: #2e2e2e;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: #ffffff;
     transition: transform 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -122,7 +124,7 @@ const StyledWrapper = styled.div`
     width: 100%;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: #f1f5f9;
     border-radius: 10px;
   }
 
@@ -136,7 +138,7 @@ const StyledWrapper = styled.div`
 
   .textBox {
     padding: 0.1rem 0.5rem;
-    color: white;
+    color: #334155;
     display: flex;
     gap: 0.5rem;
   }
