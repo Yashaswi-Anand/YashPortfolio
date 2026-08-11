@@ -73,7 +73,7 @@ function Project() {
     return (
         <div>
             <div className='d-flex justify-center align-center g-10'>
-                <span><FontAwesomeIcon icon={faProjectDiagram} style={{ fontSize: '1.9rem', color: '#0d9488' }} /></span><span><h1>Projects</h1></span>
+                <span><FontAwesomeIcon icon={faProjectDiagram} style={{ fontSize: '1.9rem', color: '#0d9488' }} /></span><span><h2>Projects</h2></span>
             </div>
             <div className='card-container'>
                 {cards && cards.map((card, index) => (

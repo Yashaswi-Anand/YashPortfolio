@@ -18,7 +18,13 @@ const CardView = ({ item }) => {
     <StyledWrapper>
       <div className="card">
         <div className="img">
-          <img className="image-style" src={item.logo} alt={item.title} />
+          <img
+            className="image-style"
+            src={item.logo}
+            alt={item.title}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div className="textBox">
           <p className="title">{item.title} - {item.date}</p>
@@ -80,7 +86,7 @@ function Achivement() {
     <div className="section-screen">
       <div className="d-flex justify-center align-center g-10" style={{ marginBottom: "1rem" }}>
         <FontAwesomeIcon icon={faTrophy} style={{ fontSize: '1.9rem', color: '#0d9488', marginRight: "0.5rem" }} />
-        <h1>Achievements</h1>
+        <h2>Achievements</h2>
       </div>
       <CarouselWrapper ref={carouselRef}>
         {achievements_date.map((item, index) => (

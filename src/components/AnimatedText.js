@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { motion } from 'framer-motion';
 
 const AnimatedText = ({ text, className = '', delay = 0 }) => {
@@ -31,8 +32,11 @@ const AnimatedText = ({ text, className = '', delay = 0 }) => {
     },
   };
 
+  // Renders as a <span> so it stays valid inside heading elements. Words are
+  // separated by real space characters rather than margins, so the element's
+  // text content stays readable to screen readers and search engines.
   return (
-    <motion.div
+    <motion.span
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -40,19 +44,20 @@ const AnimatedText = ({ text, className = '', delay = 0 }) => {
       style={{ display: 'inline-block' }}
     >
       {words.map((word, index) => (
-        <motion.span
-          key={index}
-          variants={wordVariants}
-          style={{ 
-            display: 'inline-block', 
-            marginRight: '0.25em',
-            transformOrigin: 'bottom center'
-          }}
-        >
-          {word}
-        </motion.span>
+        <Fragment key={index}>
+          <motion.span
+            variants={wordVariants}
+            style={{
+              display: 'inline-block',
+              transformOrigin: 'bottom center'
+            }}
+          >
+            {word}
+          </motion.span>
+          {index < words.length - 1 ? ' ' : null}
+        </Fragment>
       ))}
-    </motion.div>
+    </motion.span>
   );
 };
 

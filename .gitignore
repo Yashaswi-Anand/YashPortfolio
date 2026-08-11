@@ -9,7 +9,9 @@
 /coverage
 
 # production
-# /build
+# Built by CI on every push (see .github/workflows/deploy.yml), so the compiled
+# output is never committed — a tracked build/ drifts from what is deployed.
+/build
 
 # misc
 .DS_Store

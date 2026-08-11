@@ -89,14 +89,14 @@ function Home() {
                         className='d-flex justify-center align-center flex-direction-column w-100'
                         variants={itemVariants}
                     >
-                        <motion.h2
+                        <motion.h1
                             className='r-margin-top'
                             initial={{ opacity: 0, y: -50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.2 }}
                         >
                             <AnimatedText text="Yashaswi Anand" delay={0.5} />
-                        </motion.h2>
+                        </motion.h1>
 
                         <motion.div
                             className='d-flex w-100 g-40 justify-center align-center'

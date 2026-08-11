@@ -10,7 +10,9 @@ const Cards = ({ data }) => {
               <div style={{ padding: 10, width: '100%', height: '100%' }}>
                 <img
                   src={data.image}
-                  alt="Card"
+                  alt={`${data.project_name} screenshot`}
+                  loading="lazy"
+                  decoding="async"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 5 }}
                 />
               </div>

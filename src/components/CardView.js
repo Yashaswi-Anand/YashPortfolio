@@ -5,7 +5,13 @@ const CardView = ({ item }) => {
     <StyledWrapper>
       <div className="card">
         <div className="img">
-          <img className='image-style' src={item.logo} alt="img" />
+          <img
+            className='image-style'
+            src={item.logo}
+            alt={`${item.institution} logo`}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div className="textBox">
           <p className='p'> {item.degree}</p>

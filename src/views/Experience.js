@@ -30,7 +30,11 @@ function Experience() {
             position: "Senior Full Stack Developer",
             duration: "Apr 2026 - Present",
             location: "Ahemdabad",
-            logo: "https://upjao.ai/wp-content/uploads/2023/10/Upjao-Logo-1.png",
+            // upjao.ai now serves an SPA catch-all, so this URL returns an HTML
+            // page instead of the image and can never render. Until the real
+            // logo is saved into src/assets/, use the initial-letter fallback
+            // rather than firing a request that is guaranteed to fail.
+            logo: null,
             description: "Promoted to Senior Full Stack Developer. Leading full-stack development initiatives in agricultural technology with broader ownership of system architecture, code reviews, and mentoring.",
             achievements: []
         },
@@ -39,7 +43,11 @@ function Experience() {
             position: "Full Stack Developer",
             duration: "Apr 2023 - Mar 2026",
             location: "Ahemdabad",
-            logo: "https://upjao.ai/wp-content/uploads/2023/10/Upjao-Logo-1.png",
+            // upjao.ai now serves an SPA catch-all, so this URL returns an HTML
+            // page instead of the image and can never render. Until the real
+            // logo is saved into src/assets/, use the initial-letter fallback
+            // rather than firing a request that is guaranteed to fail.
+            logo: null,
             description: "Led full-stack development initiatives in agricultural technology, focusing on scalable web applications and data optimization.",
             achievements: [
                 {
@@ -111,7 +119,7 @@ function Experience() {
                 transition={{ duration: 0.8, delay: 0.2 }}
             >
                 <div className='d-flex justify-center align-center g-10'>
-                    <span><FontAwesomeIcon icon={faBriefcase} style={{ fontSize: '1.9rem', color: '#0d9488' }} /></span><span><h1>Experience</h1></span>
+                    <span><FontAwesomeIcon icon={faBriefcase} style={{ fontSize: '1.9rem', color: '#0d9488' }} /></span><span><h2>Experience</h2></span>
                 </div>
             </motion.div>
 

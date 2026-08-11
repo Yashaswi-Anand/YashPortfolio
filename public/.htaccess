@@ -1,0 +1,277 @@
+# ============================================================================
+#  .htaccess — Create React App SPA on Hostinger shared hosting (LiteSpeed)
+#  Deploy target: subdomain document root (e.g. /domains/sub.example.com/public_html)
+#
+#  This file lives in CRA's public/ folder, so `npm run build` copies it to
+#  build/.htaccess automatically on every build. Upload build/* to the docroot.
+#
+#  Every block is wrapped in <IfModule> so a missing module is a no-op, never a 500.
+# ============================================================================
+
+
+# ---------------------------------------------------------------------------
+# 0. Baseline directory behaviour
+# ---------------------------------------------------------------------------
+
+# index.html is the only entry point.
+<IfModule mod_dir.c>
+  DirectoryIndex index.html
+</IfModule>
+
+# Never expose a directory listing if index.html is ever missing.
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+# Disable content negotiation. With MultiViews on, a request for /about can be
+# silently answered with about.html / about.js instead of reaching the rewrite
+# rules below — the classic "SPA route works locally, 404s on shared hosting" bug.
+<IfModule mod_negotiation.c>
+  Options -MultiViews
+</IfModule>
+
+# UTF-8 for text responses that don't declare a charset themselves.
+AddDefaultCharset utf-8
+
+
+# ---------------------------------------------------------------------------
+# 1. HTTPS + SPA fallback routing
+# ---------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Subdomain docroot => the app is served from "/".
+  # If you instead deploy into a SUBFOLDER (public_html/app/), change this to
+  # RewriteBase /app/ and set "homepage": "/app" in package.json.
+  RewriteBase /
+
+  # -- 1a. Force HTTPS -------------------------------------------------------
+  # Two conditions ANDed together: redirect only when the request is plain HTTP
+  # *and* no upstream proxy has already terminated TLS. The X-Forwarded-Proto
+  # check is what prevents an infinite redirect loop if the site later sits
+  # behind Cloudflare in "Flexible" SSL mode (proxy speaks HTTPS to the browser
+  # but HTTP to origin, so %{HTTPS} is off on every single request).
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https [NC]
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE]
+
+  # -- 1b. Let real files and directories through ----------------------------
+  # Anything that physically exists on disk is served as-is and never rewritten:
+  # /static/js/main.<hash>.js, /static/css/main.<hash>.css, /static/media/*,
+  # /manifest.json, /favicon.ico, /robots.txt, /logo192.png, ...
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d [OR]
+  RewriteCond %{REQUEST_FILENAME} -l
+  RewriteRule ^ - [L]
+
+  # -- 1c. Missing ASSETS must 404, not fall through to index.html -----------
+  # Without this, a stale browser tab requesting a hashed chunk from a previous
+  # deploy (main.OLDHASH.js) receives index.html with HTTP 200 and
+  # Content-Type: text/html. The browser then tries to parse HTML as JavaScript
+  # and throws "Uncaught SyntaxError: Unexpected token '<'" — an error that is
+  # notoriously hard to diagnose. A clean 404 makes the real cause obvious and
+  # lets error reporting catch it.
+  RewriteRule \.(js|mjs|css|map|json|xml|txt|png|jpe?g|gif|svg|webp|avif|ico|bmp|woff|woff2|ttf|otf|eot|mp4|webm|ogg|mp3|wav|pdf|zip|webmanifest)$ - [R=404,L]
+
+  # -- 1d. SPA fallback ------------------------------------------------------
+  # Everything else (a real client-side route like /projects or /contact) is
+  # rewritten — NOT redirected — to index.html. The URL in the address bar is
+  # preserved so React Router can read it and render the right view.
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+
+# ---------------------------------------------------------------------------
+# 2. Cache-Control
+#
+#  THE CRITICAL RULE: hashed assets = cache forever, index.html = never cache.
+#
+#  CRA emits content-hashed filenames (main.f8f2cc1b.js). The hash changes
+#  whenever the file's bytes change, so a given URL's content is immutable by
+#  construction and can safely be cached for a year.
+#
+#  index.html is the opposite: its URL is fixed and its contents change on every
+#  deploy, because it is the only file that names the current hashed bundles.
+#  If index.html is cached, a returning visitor loads the OLD html, which
+#  references the OLD bundle filenames — which no longer exist on the server.
+#  The user then sees either a permanently stale site or a blank white page,
+#  and cannot fix it without a hard refresh. Shipping a new build does not help;
+#  their browser never asks for the new index.html. This is the single most
+#  common "I deployed but nothing changed" failure on shared hosting.
+#
+#  Note the ordering below: broader rules first, so the narrower rules that
+#  follow win when two <FilesMatch> blocks match the same file.
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+
+  # -- 2a. Un-hashed public/ assets: cache a week, then revalidate -----------
+  # favicon.ico, logo192.png, logo512.png etc. have stable filenames, so they
+  # cannot be cached immutably — but they change rarely.
+  <FilesMatch "\.(ico|png|jpe?g|gif|svg|webp|avif|bmp|woff|woff2|ttf|otf|eot|mp4|webm|ogg|mp3|wav|pdf)$">
+    Header always set Cache-Control "public, max-age=604800, stale-while-revalidate=86400"
+  </FilesMatch>
+
+  # -- 2b. Content-hashed assets: one year, immutable ------------------------
+  # Matches CRA's <name>.<hash>.<ext> pattern (8-hex for js/css, 20-hex for
+  # files emitted by asset modules under static/media/). "immutable" tells the
+  # browser not to send a revalidation request even on an explicit reload.
+  <FilesMatch "\.[0-9a-f]{8,32}\.(js|mjs|css|jpe?g|png|gif|svg|webp|avif|ico|bmp|woff|woff2|ttf|otf|eot|mp4|webm|ogg|mp3|wav)$">
+    Header always set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # -- 2c. index.html and other HTML: always revalidate ----------------------
+  # "no-cache" does NOT mean "do not store" — it means "store it, but you must
+  # revalidate with the origin before reuse". Combined with the ETag/Last-Modified
+  # that the server sends automatically, a repeat visit costs one conditional
+  # GET that usually returns a 304 with an empty body. So this is cheap, and it
+  # guarantees the newest deploy is picked up on the very next page load.
+  # (Deliberately NOT "no-store", which would force a full re-download every time.)
+  <FilesMatch "\.(html|htm)$">
+    Header always set Cache-Control "no-cache, must-revalidate, max-age=0"
+    Header always unset Expires
+    Header always unset Pragma
+  </FilesMatch>
+
+  # -- 2d. App metadata + crawler files: short cache -------------------------
+  <FilesMatch "^(manifest\.json|asset-manifest\.json|manifest\.webmanifest|service-worker\.js|robots\.txt|sitemap\.xml)$">
+    Header always set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+
+  # Caches must key on the encoding, or a proxy can hand a gzipped body to a
+  # client that did not advertise gzip support.
+  <FilesMatch "\.(js|mjs|css|html|htm|json|xml|svg|txt|webmanifest)$">
+    Header append Vary Accept-Encoding
+  </FilesMatch>
+
+  # Strip the server-identifying header some stacks leak.
+  Header always unset X-Powered-By
+
+</IfModule>
+
+# ETags are intentionally left ENABLED. index.html relies on them for cheap
+# 304 revalidation; the H5BP-style "FileETag None" trick only makes sense on
+# multi-server setups where inode-based ETags differ between machines.
+
+
+# ---------------------------------------------------------------------------
+# 3. Compression
+#
+#  IMPORTANT LiteSpeed CAVEAT: LiteSpeed does not implement mod_deflate. It
+#  silently ignores AddOutputFilterByType and compresses natively instead
+#  (gzip + brotli, controlled by the vhost's enableGzip / enableBr settings,
+#  which Hostinger enables by default). So on Hostinger this block is inert but
+#  harmless — it is kept so the same file also works if the site is ever moved
+#  to real Apache. There is no mod_brotli directive to add here: Brotli on
+#  LiteSpeed is server-side only and cannot be switched on from .htaccess.
+#  Verify with:  curl -sI -H 'Accept-Encoding: br,gzip' https://your.domain/static/js/main.<hash>.js | grep -i content-encoding
+# ---------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  <IfModule mod_filter.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+    AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json application/ld+json application/manifest+json
+    AddOutputFilterByType DEFLATE application/xml application/rss+xml application/atom+xml
+    AddOutputFilterByType DEFLATE image/svg+xml image/x-icon
+    AddOutputFilterByType DEFLATE font/ttf font/otf application/vnd.ms-fontobject
+  </IfModule>
+
+  # Already-compressed formats: re-compressing wastes CPU and can grow the file.
+  <IfModule mod_setenvif.c>
+    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp|avif|ico|zip|gz|br|mp4|webm|mp3|woff|woff2)$ no-gzip dont-vary
+  </IfModule>
+</IfModule>
+
+
+# ---------------------------------------------------------------------------
+# 4. Security headers
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+
+  # Stop browsers from MIME-sniffing a response into a different content type.
+  # Directly relevant here: it is what makes the 404-on-missing-asset rule in
+  # section 1c fail loudly instead of a browser guessing an HTML body is JS.
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Clickjacking protection. SAMEORIGIN (not DENY) so the site can still be
+  # framed by itself — use DENY if nothing ever embeds this site in an iframe.
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Send the full URL to same-origin destinations, origin-only cross-origin,
+  # and nothing at all when downgrading HTTPS -> HTTP. Good default: keeps
+  # referral analytics working without leaking full paths to third parties.
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Turn off powerful APIs this portfolio never uses.
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()"
+
+  # X-XSS-Protection is deliberately omitted: it is deprecated, ignored by every
+  # current browser, and its legacy filter was itself exploitable.
+
+  # -- HSTS: enable only AFTER confirming HTTPS works on every hostname -------
+  # This is effectively irreversible for the max-age duration — browsers will
+  # refuse plain HTTP to this host and you cannot recall the header. Start with
+  # a short max-age (300), confirm, then raise. Do not add "preload" unless you
+  # intend to submit the domain to hstspreload.org.
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+</IfModule>
+
+
+# ---------------------------------------------------------------------------
+# 5. MIME types
+#  Shared hosts frequently ship an outdated mime.types. A .woff2 or .webmanifest
+#  served as application/octet-stream is silently dropped by the browser.
+# ---------------------------------------------------------------------------
+<IfModule mod_mime.c>
+  AddType text/javascript                       .js .mjs
+  AddType text/css                              .css
+  AddType application/json                      .json .map
+  AddType application/manifest+json             .webmanifest
+  AddType application/ld+json                   .jsonld
+
+  AddType image/svg+xml                         .svg .svgz
+  AddType image/webp                            .webp
+  AddType image/avif                            .avif
+  AddType image/x-icon                          .ico
+
+  AddType font/woff                             .woff
+  AddType font/woff2                            .woff2
+  AddType font/ttf                              .ttf
+  AddType font/otf                              .otf
+  AddType application/vnd.ms-fontobject         .eot
+
+  AddType video/mp4                             .mp4
+  AddType video/webm                            .webm
+  AddType audio/mpeg                            .mp3
+
+  # Serve text formats as UTF-8 so accented characters render correctly.
+  AddCharset utf-8 .css .js .mjs .json .map .webmanifest .html .htm .txt .xml .svg
+</IfModule>
+
+
+# ---------------------------------------------------------------------------
+# 6. Hardening: block source maps and dotfiles
+#
+#  build/static/js/main.<hash>.js.map is ~6 MB of your ORIGINAL, unminified
+#  source — component names, comments, any hard-coded endpoint or key. Anyone
+#  can un-webpack it back into a browsable source tree. Denying it here is a
+#  stopgap; the real fix is to stop generating it (see notes below).
+# ---------------------------------------------------------------------------
+<FilesMatch "(^\.|~$|\.(map|bak|config|dist|fla|inc|ini|log|psd|sh|sql|sw[op]|env)$)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+
+# ---------------------------------------------------------------------------
+# 7. Error pages
+#  A 404 from section 1c returns the server's default page. Uncomment to hand
+#  those to the SPA instead — but keep the status code honest, do NOT map 404
+#  to a 200 index.html, which would make every broken asset look successful to
+#  crawlers and monitoring.
+# ---------------------------------------------------------------------------
+# ErrorDocument 404 /index.html

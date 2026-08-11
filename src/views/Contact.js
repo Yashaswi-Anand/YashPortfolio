@@ -87,7 +87,7 @@ function Contact() {
           >
           </motion.span>
           <div className='d-flex justify-center align-center g-10'>
-            <span><FontAwesomeIcon icon={faAddressCard} style={{ fontSize: '1.9rem', color: '#0d9488' }} /></span><span><h1>Contact</h1></span>
+            <span><FontAwesomeIcon icon={faAddressCard} style={{ fontSize: '1.9rem', color: '#0d9488' }} /></span><span><h2>Contact</h2></span>
           </div>
         </motion.div>
 
