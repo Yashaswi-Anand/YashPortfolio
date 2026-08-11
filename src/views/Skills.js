@@ -7,7 +7,7 @@ import AnimatedSection from '../components/AnimatedSection';
 function Skills() {
     const skillsData = [
         { title: "Programming", skills: "Java • JavaScript • Python" },
-        { title: "Backend", skills: "Node.js • Hapi.js • GoLang" },
+        { title: "Backend", skills: "Node.js • Python • Express.js" },
         { title: "Databases", skills: "MySQL • PostgreSQL • MongoDB • Redis" },
         { title: "DevOps", skills: "Docker • Kubernetes • AWS" },
         { title: "Frontend", skills: "React.js • Angular.js • Material-UI" },

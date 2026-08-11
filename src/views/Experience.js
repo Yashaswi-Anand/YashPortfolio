@@ -82,7 +82,7 @@ function Experience() {
             duration: "Jan 2023 - Mar 2023",
             location: "Remote",
             logo: null,
-            description: "Designed and developed a web application using React.js for the frontend and built REST APIs with Node.js and Hapi.js for efficient backend operations. Structured project hierarchy and implemented test run features to assist the testing team in evaluating project functionalities effectively.",
+            description: "Designed and developed a web application using React.js for the frontend and built REST APIs with Node.js and Python for efficient backend operations. Structured project hierarchy and implemented test run features to assist the testing team in evaluating project functionalities effectively.",
             achievements: []
         }
     ];
