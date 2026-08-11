@@ -79,7 +79,6 @@ const NavBar = () => {
                             <a href={`#${item.id}`} onClick={(e) => e.preventDefault()}>
                                 <div className="nav-icon-wrapper">
                                     <FontAwesomeIcon icon={item.icon} className="nav-icon" />
-                                    <div className="nav-ripple"></div>
                                 </div>
                                 <span className="nav-text">{item.label}</span>
                                 <div className="nav-indicator"></div>
