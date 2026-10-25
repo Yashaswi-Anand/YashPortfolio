@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Investor — Live IPO Tracker">
+  <defs>
+    <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#115e59"/>
+    </linearGradient>
+    <linearGradient id="spark" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.35"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="#f8fafc"/>
+
+  <!-- header -->
+  <rect width="800" height="132" fill="url(#hdr)"/>
+  <rect x="40" y="38" width="40" height="40" rx="11" fill="#0d9488"/>
+  <text x="60" y="66" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff" text-anchor="middle">I</text>
+  <text x="96" y="58" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="27" font-weight="700" fill="#ffffff">Investor</text>
+  <text x="96" y="86" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="16" fill="#5eead4">Live IPO Tracker &#183; GMP, subscription &amp; allotment</text>
+
+  <!-- stat chips -->
+  <g font-family="Inter, Segoe UI, Arial, sans-serif">
+    <rect x="40" y="162" width="226" height="82" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="62" y="192" font-size="13" fill="#64748b" letter-spacing="1">OPEN NOW</text>
+    <text x="62" y="225" font-size="26" font-weight="700" fill="#0f172a">0</text>
+    <rect x="287" y="162" width="226" height="82" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="309" y="192" font-size="13" fill="#64748b" letter-spacing="1">UPCOMING</text>
+    <text x="309" y="225" font-size="26" font-weight="700" fill="#0f172a">4</text>
+    <rect x="534" y="162" width="226" height="82" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+    <text x="556" y="192" font-size="13" fill="#64748b" letter-spacing="1">TOP GMP</text>
+    <text x="556" y="225" font-size="26" font-weight="700" fill="#059669">+20%</text>
+  </g>
+
+  <!-- table -->
+  <rect x="40" y="272" width="720" height="288" rx="16" fill="#ffffff" stroke="#e2e8f0"/>
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" fill="#94a3b8" letter-spacing="1">
+    <text x="66" y="304">COMPANY</text>
+    <text x="420" y="304">GMP</text>
+    <text x="560" y="304">TREND</text>
+    <text x="690" y="304">SUBS.</text>
+  </g>
+  <line x1="56" y1="318" x2="744" y2="318" stroke="#e2e8f0"/>
+
+  <g font-family="Inter, Segoe UI, Arial, sans-serif">
+    <!-- row 1 -->
+    <text x="66" y="352" font-size="16" font-weight="600" fill="#0f172a">Jio Platforms</text>
+    <text x="420" y="352" font-size="16" font-weight="700" fill="#059669">+22.3%</text>
+    <path d="M560 356 L580 350 L600 352 L620 340 L640 334" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="690" y="352" font-size="15" fill="#334155">12.45x</text>
+    <line x1="56" y1="370" x2="744" y2="370" stroke="#f1f5f9"/>
+
+    <!-- row 2 -->
+    <text x="66" y="404" font-size="16" font-weight="600" fill="#0f172a">Tonbo Imaging India</text>
+    <text x="420" y="404" font-size="16" font-weight="700" fill="#059669">+65.7%</text>
+    <path d="M560 410 L580 400 L600 394 L620 382 L640 376" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="690" y="404" font-size="15" fill="#334155">96.88x</text>
+    <line x1="56" y1="422" x2="744" y2="422" stroke="#f1f5f9"/>
+
+    <!-- row 3 -->
+    <text x="66" y="456" font-size="16" font-weight="600" fill="#0f172a">BLS Polymers</text>
+    <text x="420" y="456" font-size="16" font-weight="700" fill="#059669">+20.0%</text>
+    <path d="M560 462 L580 458 L600 450 L620 448 L640 438" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="690" y="456" font-size="15" fill="#94a3b8">&#8212;</text>
+    <line x1="56" y1="474" x2="744" y2="474" stroke="#f1f5f9"/>
+
+    <!-- row 4 -->
+    <text x="66" y="508" font-size="16" font-weight="600" fill="#0f172a">Sahajanand Medical</text>
+    <text x="420" y="508" font-size="16" font-weight="700" fill="#059669">+7.9%</text>
+    <path d="M560 512 L580 508 L600 504 L620 500 L640 494" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="690" y="508" font-size="15" fill="#334155">4.29x</text>
+  </g>
+
+  <rect x="56" y="528" width="104" height="26" rx="13" fill="#ccfbf1"/>
+  <text x="108" y="546" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#0f766e" text-anchor="middle">Mainboard</text>
+  <rect x="170" y="528" width="64" height="26" rx="13" fill="#e0e7ff"/>
+  <text x="202" y="546" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#4338ca" text-anchor="middle">SME</text>
+</svg>

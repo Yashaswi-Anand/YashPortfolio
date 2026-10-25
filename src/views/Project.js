@@ -3,9 +3,17 @@ import { faProjectDiagram } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import polling from './../assets/projects/poling_img.png';
 import blog_img from './../assets/projects/blog_img.png';
+import investorIpo from './../assets/projects/investor_ipo.svg';
 
 function Project() {
     const cards = [
+        {
+            project_name: "Investor — Live IPO Tracker",
+            image: investorIpo,
+            content: `Live IPO tracker for the Indian market covering every Mainboard and SME issue. Shows grey market premium with daily GMP history, subscription status (QIB/NII/Retail), price band, lot size and minimum investment, plus allotment and listing dates. Each IPO gets its own server-rendered detail page, and the listing can be filtered by status or board and sorted by GMP, subscription or countdown.`,
+            technologies: `Next.js (App Router), React, SSR, Node.js`,
+            live: 'https://investor.socialriser.com'
+        },
         {
             project_name: "Tech Blog Portal",
             back: "Card 4 Back",
