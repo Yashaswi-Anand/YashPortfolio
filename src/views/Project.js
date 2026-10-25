@@ -10,7 +10,7 @@ function Project() {
         {
             project_name: "Investor — Live IPO Tracker",
             image: investorIpo,
-            content: `Live IPO tracker for the Indian market covering every Mainboard and SME issue. Shows grey market premium with daily GMP history, subscription status (QIB/NII/Retail), price band, lot size and minimum investment, plus allotment and listing dates. Each IPO gets its own server-rendered detail page, and the listing can be filtered by status or board and sorted by GMP, subscription or countdown.`,
+            content: `Live IPO tracker for the Indian market covering every Mainboard and SME issue. Shows grey market premium with daily GMP history, subscription status (QIB/NII/Retail), price band, lot size and minimum investment, plus allotment and listing dates. Each IPO gets its own detail page, and the listing can be filtered by status or board and sorted by GMP, subscription or countdown.`,
             technologies: `Next.js (App Router), React, Python, PostgreSQL`,
             live: 'https://investor.socialriser.com'
         },
